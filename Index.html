@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Landjet Intermodal LLC – Port Drayage in Southern California</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="assets/style.css"/>
+ <link rel="stylesheet" href="assets/responsive.css"> 
+<style>
+/* Form polish */
+
+textarea[name="notes"] { resize: none; min-height: 110px; }
+.btn[disabled] { opacity: .6; cursor: not-allowed; }
+
+/* Header: darker blue */ 
+header.header { background-color: #1e3a8a; color: #ffffff; }
+header.header a, header.header .navlinks a { color: #ffffff; }
+
+
+	/* --- Semi-transparent background logo across body --- */
+/*
+    html, body { height: 100%; }
+	    body { position: relative; }
+	    body::before {
+	      content: "";
+	      position: fixed;
+	      inset: 0;
+      background-image: url('assets/logo.png'); /* change path if needed */
+/*
+      background-repeat: no-repeat;
+	      background-position: center 10%;
+	      background-size: 31vmin;    /* adjust size */
+/*
+          opacity: 0.5;               /* adjust transparency (0–1) */
+  /*    pointer-events: none;
+	      z-index: 0;
+	    }
+
+header.header, main, footer.footer { position: relative; z-index: 1; }
+
+
+@media (max-width: 640px) {
+body::before { background-size: 90vmin; background-position: center 35%; opacity: 0.06; }
+}
+
+/* Temporary tweak to push Fast Quote lower */
+/*
+#fast-quote { margin-top: 200px; }
+
+/* Flip button (Call to Reserve) */
+/*
+.flip-btn { perspective: 1000px; display: inline-block; }
+.flip-btn-inner {
+position: relative; width: 170px; height: 44px;
+text-align: center; transition: transform 0.6s; transform-style: preserve-3d;
+}
+.flip-btn.flipped .flip-btn-inner { transform: rotateY(180deg); }
+.flip-btn-front, .flip-btn-back {
+position: absolute; width: 100%; height: 100%;
+display: flex; align-items: center; justify-content: center;
+backface-visibility: hidden;
+border: 1px solid #1e3a8a; border-radius: 6px; cursor: pointer;
+font-weight: 600;
+}
+.flip-btn-front { background: #1e3a8a; color: #fff; }
+.flip-btn-back { background: #fff; color: #1e3a8a; transform: rotateY(180deg); }
+.flip-btn-back a { color: #1e3a8a; text-decoration: none; font-weight: 700; }
+
+/* === Easter egg modal styles (added) === */
+/*
+.logo-egg { background:none; border:none; padding:0; cursor:pointer; }
+.logo-egg:focus { outline: 2px solid #93c5fd; outline-offset: 2px; border-radius:8px; }
+
+.egg-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.55);
+display: none; align-items:center; justify-content:center; z-index: 50; }
+.egg-overlay.show { display:flex; }
+
+.egg-modal { background:#ffffff; color:#0f172a; width: min(92vw, 420px); border-radius:16px;
+box-shadow: 0 20px 40px rgba(0,0,0,.25); padding:22px; text-align:center; position: relative; }
+.egg-modal h3 { margin:0 0 6px; font-size:20px; font-weight:800; color:#1e3a8a; }
+.egg-modal p { margin:0 0 14px; color:#475569; }
+.egg-actions { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+.egg-actions .btn { padding:10px 14px; border-radius:10px; border:1px solid #1e3a8a; text-decoration:none; }
+.egg-actions .btn.primary { background:#1e3a8a; color:#fff; }
+.egg-actions .btn.secondary { background:#fff; color:#1e3a8a; }
+
+.egg-close { position:absolute; top:10px; right:10px; background:none; border:none;
+font-size:22px; line-height:1; cursor:pointer; color:#334155; }
+
+
+/* Confetti canvas */
+/*
+.confetti-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 60; display:none; }
+.egg-modal.ticket {
+--gold-1: #fef3c7; /* highlight */
+/*
+--gold-2: #ffd166; /* light */
+/*
+--gold-3: #fbbf24; /* mid */
+/*
+--gold-4: #d97706; /* deep */
+/*--gold-5: #b8860b; /* brown-gold */
+/*
+width: min(92vw, 620px);
+padding: 26px 30px;
+border-radius: 18px;
+color: #3a2e0a;
+background:
+linear-gradient(110deg, rgba(255,255,255,.35) 0%, rgba(255,255,255,0) 18%),
+linear-gradient(140deg, var(--gold-5) 0%, var(--gold-2) 24%, var(--gold-3) 48%, var(--gold-4) 72%, var(--gold-2) 100%);
+border: 2px solid #c0841a;
+box-shadow:
+0 20px 50px rgba(0,0,0,.35),
+inset 0 1px 0 rgba(255,255,255,.6),
+inset 0 -2px 0 rgba(0,0,0,.18);
+position: relative;
+overflow: hidden;
+text-align: center;
+
+/* scalloped sides using mask (fallback keeps rectangle) */
+/*
+-webkit-mask:
+radial-gradient(12px at -6px 12px, transparent 98%, #000 100%) left top/12px 24px repeat-y,
+radial-gradient(12px at calc(100% + 6px) 12px, transparent 98%, #000 100%) right top/12px 24px repeat-y,
+linear-gradient(#000,#000);
+mask:
+radial-gradient(12px at -6px 12px, transparent 98%, #000 100%) left top/12px 24px repeat-y,
+radial-gradient(12px at calc(100% + 6px) 12px, transparent 98%, #000 100%) right top/12px 24px repeat-y,
+linear-gradient(#000,#000);
+}
+
+/* foil shimmer */
+/*
+.egg-modal.ticket::after {
+content: "";
+position: absolute; inset: -40% 0 auto 0; height: 60%;
+background: linear-gradient(120deg, rgba(255,255,255,0) 40%, rgba(255,255,255,.35) 50%, rgba(255,255,255,0) 60%);
+transform: translateY(-100%) skewY(-8deg);
+animation: ticketShimmer 2.4s ease-out 0.3s forwards;
+pointer-events:none;
+}
+@keyframes ticketShimmer { to { transform: translateY(260%) skewY(-8deg); } }
+
+/* inner frame line */
+/*
+.ticket-border { position:absolute; inset: 12px; border: 1.6px solid rgba(58,46,10,.7); border-radius: 10px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.25); pointer-events:none; }
+
+
+.ticket-inner { position: relative; z-index: 1; }
+.ticket-head { display:flex; flex-direction:column; align-items:center; gap:6px; margin-bottom:8px; }
+.ticket-logo { width:56px; height:56px; border-radius:10px; box-shadow: 0 2px 6px rgba(0,0,0,.25); }
+.ticket-head h3 { letter-spacing: 3px; margin: 2px 0 0; font-size: 22px; font-weight: 900; color:#3a2e0a; text-transform: uppercase; }
+.ticket-sub { font-weight:700; font-size: 12px; opacity:.9; }
+
+.ticket-body p { color:#3a2e0a; }
+.ticket-offer { font-size:16px; margin: 8px 0 12px; }
+.ticket-fine { font-size:10px; opacity:.85; margin-top:8px; }
+
+.ticket-serial { margin-top:12px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px; letter-spacing:1px; opacity:.9; }
+
+
+/* Instagram embed sizing */
+/*
+.ig-embed iframe { width: 100%; height: 510px; border: 0; }
+*/
+</style>
+</head>
+<body>
+<header class="header">
+<div class="container nav">
+
+<div class="brand">
+<div class="logo">
+<!-- clickable logo (added) -->
+<button id="logoEgg" class="logo-egg" aria-label="Open Landjet Easter egg">
+<img src="assets/Landjet.png" alt="Landjet Intermodal Logo" style="height:80px; width:80px; object-fit: cover; border-radius:8px;">
+</button>
+</div>
+<div>
+<div style="font-weight:800" class="text-logo">Landjet Intermodal LLC</div>
+<div style="font-size:12px;color:#e0e7ff" class="subtext-logo">Port Drayage • Yard Parking • Transloading</div>
+</div>
+</div>
+<nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#parking">Parking</a>
+</nav>
+<div class="cta">
+<a class="btn btn-outline" href="tel:+19092957926">📞 909-295-7926</a>
+<a class="btn btn-outline" href="mailto:operations@landjetintermodal.com">✉️ Email</a>
+<a class="btn" href="#fast-quote">Request a Quote →</a>
+</div>
+</div>
+</header>
+
+
+<!-- === Easter egg modal markup (added) === -->
+<div id="eggOverlay" class="egg-overlay" role="dialog" aria-modal="true" aria-labelledby="eggTitle" aria-hidden="true">
+<div class="egg-modal ticket">
+<button class="egg-close" id="eggClose" aria-label="Close">×</button>
+<div class="ticket-border" aria-hidden="true"></div>
+<div class="ticket-inner">
+<div class="ticket-head">
+<img src="assets/logo.png" alt="Landjet logo" class="ticket-logo"/>
+<h3 id="eggTitle">Golden Ticket</h3>
+<div class="ticket-sub"></div>
+</div>
+<div class="ticket-body">
+<p class="ticket-offer">🎉 Thanks for finding the easter egg! Screenshot this and  get free chassis use for your first container!</p>
+<div class="egg-actions">
+<a class="btn primary" href="tel:+19092957926">Call Dispatch</a>
+<a class="btn secondary" href="mailto:operations@landjetintermodal.com?subject=Found%20the%20Golden%20Ticket">Email</a>
+</div>
+<p class="ticket-fine">*New customers only. Applies to standard chassis day. Terms available on request.</p>
+<div class="ticket-serial">No. <span id="ticketSerial"></span></div>
+</div>
+</div>
+</div>
+<p style="font-size:10px;margin-top:10px;color:#64748b">Tip: Press Esc or click outside to close.</p>
+</div>
+</div>
+<!-- Confetti layer -->
+<canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+<main>
+<!-- HERO + FAST QUOTE -->
+<section class="section">
+
+<div class="hero" id="hero">
+<button class="arrow left" onclick="prevSlide()">
+      <i class="fa-solid fa-chevron-left"></i>
+</button>
+
+
+<div class="hero-content">
+<div class="badge">Trusted Drayage Partner</div>
+<div class="icon-content">
+    <img class="icon" src="assets/Landjet.png" alt="">
+</div>
+<div class="text-area" id="text-area">
+<h1>Reliable Southern California <span style="color:#1c3979">Port Drayage</span></h1>
+<p>
+Containers in and out of LA/LB with precision scheduling using automated appointment systems,
+tri-axle capability for heavy loads, nose-mount gensets for reefers, and real-time tracking via PortPro.
+</p>
+</div>
+
+<div style="display:flex;gap:10px; align-items:center; justify-content:center; flex-wrap:wrap;margin:14px 0 0">
+<a class="btn" href="#fast-quote">Request a Drayage Quote</a>
+<a class="btn btn-outline" href="#services">Explore Services</a>
+</div>
+<div class="stats">
+<div class="stat"><div class="val">24/7</div><div>Dispatch</div></div>
+<div class="stat"><div class="val">≥ 52k</div><div>Heavy Haul (tri-axle)</div></div>
+<div class="stat"><div class="val">98%</div><div>On-time Pickups</div></div>
+</div>
+</div>
+
+<button class="arrow right" onclick="nextSlide()">
+<i class="fa-solid fa-chevron-right"></i>
+</button>
+
+<div class="dots">
+    <div class="dot active" onclick="goToSlide(0)"></div>
+    <div class="dot" onclick="goToSlide(1)"></div>
+    <div class="dot" onclick="goToSlide(2)"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+<!-- Fast Quote card -->
+<div class="card" id="fast-quote">
+<div class="title">Fast Quote</div>
+
+
+
+<div class="body">
+<!-- Hidden target so page doesn't navigate -->
+<iframe name="fastQuoteTarget" id="fastQuoteTarget" style="display:none"></iframe>
+
+<form id="fastQuoteForm" class="form" method="post" action="contact.php" target="fastQuoteTarget" novalidate>
+<!-- Company (required) -->
+<input name="company" placeholder="Company Name" required>
+
+<div class="row cols-2">
+<!-- Contact (required) -->
+<input name="contact" placeholder="Contact Name" required>
+<!-- Phone (required) -->
+<input name="phone" type="tel" placeholder="Phone" required>
+</div>
+
+<!-- Email (required) -->
+<input name="email" type="email" placeholder="Email" required>
+
+<div class="row cols-2">
+<!-- Pickup dropdown -->
+<select name="pickup" required>
+<option value="LA/LB Ports">LA/LB Ports</option>
+<option value="Other">Other</option>
+</select>
+
+<!-- Delivery searchable dropdown -->
+<input list="deliveryCities" name="delivery" placeholder="Select city…" required autocomplete="off">
+<datalist id="deliveryCities">
+<option value="Adelanto"></option>
+<option value="Anaheim"></option>
+<option value="Buena Park"></option>
+<option value="Burbank"></option>
+<option value="Carlsbad"></option>
+<option value="Carson"></option>
+<option value="Chino"></option>
+<option value="Chino Hills"></option>
+<option value="Chula Vista"></option>
+<option value="City of Industry"></option>
+<option value="Colton"></option>
+<option value="Compton"></option>
+<option value="Corona"></option>
+<option value="Costa Mesa"></option>
+<option value="Downey"></option>
+<option value="Eastvale"></option>
+<option value="El Cajon"></option>
+<option value="El Monte"></option>
+<option value="Escondido"></option>
+<option value="Fontana"></option>
+<option value="Fountain Valley"></option>
+<option value="Fullerton"></option>
+<option value="Garden Grove"></option>
+<option value="Glendale"></option>
+<option value="Hesperia"></option>
+<option value="Huntington Beach"></option>
+<option value="Inglewood"></option>
+<option value="Irvine"></option>
+<option value="Jurupa Valley"></option>
+<option value="La Habra"></option>
+<option value="La Mesa"></option>
+<option value="Laguna Hills"></option>
+<option value="Laguna Niguel"></option>
+<option value="Lake Elsinore"></option>
+<option value="Lake Forest"></option>
+<option value="Lancaster"></option>
+<option value="Long Beach"></option>
+<option value="Los Angeles"></option>
+<option value="Menifee"></option>
+<option value="Mission Viejo"></option>
+<option value="Montebello"></option>
+<option value="Moreno Valley"></option>
+<option value="Murrieta"></option>
+<option value="National City"></option>
+<option value="Norco"></option>
+<option value="Norwalk"></option>
+<option value="Ontario"></option>
+<option value="Orange"></option>
+<option value="Oceanside"></option>
+<option value="Palmdale"></option>
+<option value="Pasadena"></option>
+<option value="Perris"></option>
+<option value="Pico Rivera"></option>
+<option value="Pomona"></option>
+<option value="Rancho Cucamonga"></option>
+<option value="Redlands"></option>
+<option value="Rialto"></option>
+<option value="Riverside"></option>
+<option value="San Bernardino"></option>
+<option value="San Clemente"></option>
+<option value="San Diego"></option>
+<option value="San Juan Capistrano"></option>
+<option value="San Marcos"></option>
+<option value="Santa Ana"></option>
+<option value="Santa Clarita"></option>
+<option value="Santee"></option>
+<option value="Temecula"></option>
+<option value="Torrance"></option>
+<option value="Tustin"></option>
+<option value="Upland"></option>
+<option value="Vernon"></option>
+<option value="Victorville"></option>
+<option value="Vista"></option>
+<option value="West Covina"></option>
+<option value="Westminster"></option>
+<option value="Whittier"></option>
+<option value="Other"></option>
+</datalist>
+</div>
+
+<div class="row cols-2">
+<!-- Container # optional -->
+<input name="container" placeholder="Container # (optional)">
+<!-- Size/Type dropdown -->
+<select name="sizetype" required>
+<option>20'</option>
+<option>20' Reefer</option>
+<option>40' ST</option>
+<option>40' HC</option>
+<option>40' Reefer</option>
+<option>45' HC</option>
+<option>Other</option>
+</select>
+</div>
+
+<textarea name="notes" placeholder="Notes (cutoff, chassis needs, appointment window, etc.)"></textarea>
+
+<button id="fastQuoteSubmit" class="btn" type="submit">Send Request</button>
+<p id="fqStatus" style="font-size:12px;color:#475569;margin:8px 0 0"></p>
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Instagram widget (added) -->
+      <div class="card" id="instagram">
+        <div class="title" style="display:flex;align-items:center;gap:8px">
+          <a href="https://www.instagram.com/landjet_intermodal/" target="_blank" rel="noopener noreferrer" aria-label="Visit Landjet Intermodal on Instagram" style="display:inline-flex;align-items:center;">
+            <img src="assets/instagram-icon.jpg" alt="Instagram" style="height:30px;width:30px;border-radius:6px;object-fit:cover;">
+          </a>
+          <a href="https://www.instagram.com/landjet_intermodal/" target="_blank" rel="noopener noreferrer" style="font-weight:700;color:inherit;text-decoration:none;">INSTAGRAM</a>
+        </div>
+        <div class="body ig-embed">
+            
+<!-- SnapWidget -->
+<script async src="https://snapwidget.com/js/snapwidget.js"></script>
+<iframe
+src="https://snapwidget.com/embed/1109320"
+class="snapwidget-widget"
+allowtransparency="true"
+frameborder="0"
+scrolling="no"
+style="border:none; overflow:hidden; width:100%; height:510px;"
+title="Posts from Instagram"></iframe>
+</div>
+
+</div>
+<!-- PortPro info block -->
+
+<div class="card" style="margin-top:18px;">
+<div class="title">PortPro – Customer &amp; Dispatch Portal</div>
+<div class="body">
+<div class="grid" style="grid-template-columns:1fr;gap:16px">
+<div>
+<p style="color:#475569">
+Access load details, appointments, live status, documents, and invoices via our PortPro portal.
+</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+<a class="btn" href="https://app.portpro.io" target="_blank" rel="noreferrer">Open PortPro ↗</a>
+<a class="btn btn-outline" href="mailto:operations@landjetintermodal.com">Request Portal Access</a>
+</div>
+<p style="font-size:12px;color:#475569;margin-top:8px">
+Don’t have an account yet? Click “Request Portal Access” and we’ll get you set up.
+</div><p style="font-size:14px;color:#475569;margin-top:10px"> Preview under test account.
+<br/>Admintest@admin.com, ABC123DEF456</div>
+</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+
+
+
+<!-- SERVICES -->
+<section id="services" class="section" style="background:#f1f5f9">
+<div class="container">
+<h2 style="font-size:28px;margin:0 0 8px">Services</h2>
+<p style="color:#475569;max-width:800px">
+End-to-end port solutions tailored to importers, exporters, and freight forwarders.
+</p>
+<div class="grid services" style="margin-top:16px">
+<div class="card"><div class="body"><strong>🚚 Port Drayage (LA/LB)</strong><br/>Live, drop, and appointment drays including night gates. Smart slot automated appointment system.</div></div>
+<div class="card"><div class="body"><strong>📦 Transloading &amp; Cross-dock</strong><br/>Fast-turn cross-dock and short-term storage via partner facilities.</div></div>
+<div class="card"><div class="body"><strong>🛡️ Heavy &amp; Overweight</strong><br/>Tri-axle chassis as needed.</div></div>
+<div class="card"><div class="body"><strong>📍 Yard Parking (Eastvale, CA)</strong><br/>Month-to-month truck &amp; trailer parking; customer container parking. Gated access, cameras, and lighting.</div></div>
+<div class="card"><div class="body"><strong>⏱️ 24/7 Dispatch &amp; Tracking</strong><br/>Proactive updates with geo-stamped milestones. After-hours support.</div></div>
+<div class="card"><div class="body"><strong>❄️ Reefer</strong><br/>Specialized reefer container moves. Nose-mount gensets and plug-ins available.</div></div>
+</div>
+</div>
+</section>
+
+<!-- COVERAGE -->
+<section id="coverage" class="section">
+<div class="container">
+<h2 style="font-size:28px;margin:0 0 8px">Coverage</h2>
+<p style="color:#475569;max-width:800px">
+Primary lanes from the Ports of Los Angeles &amp; Long Beach to the Inland Empire, Orange County, and greater Southern California.
+</p>
+<div class="grid lanes" style="margin-top:16px">
+<div class="card"><div class="body">LA / Long Beach → Los Angeles</div></div>
+<div class="card"><div class="body">LA / Long Beach → Inland Empire</div></div>
+<div class="card"><div class="body">LA / Long Beach → Orange County &amp; San Diego County</div></div>
+</div>
+</div>
+</section>
+
+<!-- FLEET -->
+<section id="fleet" class="section" style="background:#f1f5f9">
+<div class="container">
+<h2 style="font-size:28px;margin:0 0 8px">Fleet &amp; Equipment</h2>
+<div class="grid fleet" style="margin-top:16px">
+<div class="card"><div class="body">Day cabs &amp; sleepers (CARB compliant)</div></div>
+<div class="card"><div class="body">40' / 20' chassis; tri-axle for heavy loads</div></div>
+<div class="card"><div class="body">GPS tracking with live updates</div></div>
+<div class="card"><div class="body">❄️ Nose-mount gensets </div></div>
+</div>
+</div>
+</section>
+
+<!-- PARKING -->
+<section id="parking" class="section">
+<div class="container parking-hero">
+<div>
+<h2 style="font-size:28px;margin:0 0 8px">Need truck &amp; trailer parking?</h2>
+<p style="color:#475569">Secure month-to-month parking in Eastvale, CA.</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+<!-- Flip button that reveals click-to-dial -->
+<div class="flip-btn" id="callBtn">
+<div class="flip-btn-inner">
+<div class="flip-btn-front">Call to Reserve</div>
+<div class="flip-btn-back"><a href="tel:+19092957926">📞 909-295-7926</a></div>
+</div>
+</div>
+
+<!-- Opens email client with subject prefilled -->
+<a class="btn btn-outline" href="mailto:operations@landjetintermodal.com?subject=Parking%20Info%20Request">Request Parking Info</a>
+</div>
+</div>
+
+<div class="card">
+<div class="title">Why park with Landjet?</div>
+<div class="body">
+Gated lot with lighting &amp; cameras<br/>
+Easy freeway access (SR 60 / I-10 / I-15)<br/>
+Room for tractors, trailers, and containers<br/>
+Simple month-to-month agreement
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+<div class="container contact-hero">
+<div>
+<h2 style="font-size:28px;margin:0 0 8px">Contact</h2>
+<div style="color:#475569;display:grid;gap:8px">
+<div>📞 <a href="tel:+19092957926" style="font-weight:700">(909) 295-7926</a></div>
+<div>✉️ <a href="mailto:operations@landjetintermodal.com" style="font-weight:700">operations@landjetintermodal.com</a></div>
+<div>📍 <a href="https://www.google.com/maps/search/?api=1&query=3230+Cornerstone+Dr+STE+B+Eastvale+CA+91752" target="_blank" style="font-weight:700">3230 Cornerstone Dr. STE B Eastvale CA 91752</a></div>
+<div>⏰ Dispatch: 24/7 • Office: Mon–Fri 7AM–4PM PT</div>
+</div>
+
+</div>
+<div class="card">
+<div class="title">Why shippers choose us</div>
+<div class="body">
+Hands-on owners and responsive dispatch<br/>
+Appointment slotting expertise<br/>
+Real-time updates &amp; photo PODs<br/>
+Heavy capability with tri-axle chassis
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+<div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+<div>MC# 1638048 • US DOT# 4233164</div>
+<div style="display:flex;gap:16px">
+<a href="#services">Services</a>
+<a href="#coverage">Coverage</a>
+<a href="#parking">Parking</a>
+</div>
+<div style="font-size:12px;color:#475569;margin-top:10px">
+DOT &amp; Insurance info available on request. © 2025 Landjet Intermodal LLC. All rights reserved.
+</div>
+</div>
+</footer>
+
+<script>
+
+const hero = document.getElementById('hero');
+const textArea = document.getElementById('text-area');
+const dots = document.querySelectorAll('.dot');
+/*
+const backgrounds = [
+  'linear-gradient(135deg, #0f766e, #0f766e)',
+  'linear-gradient(135deg, #0f766e, #0f766e)',
+  'linear-gradient(135deg, #0f766e, #0f766e)'
+];
+*/
+
+const backgrounds = [
+  'linear-gradient(135deg, #e8ecf3, #d9e2ec)',
+  'linear-gradient(135deg, #e8ecf3, #d9e2ec)',
+  'linear-gradient(135deg, #e8ecf3, #d9e2ec)'
+];
+
+let current = 0;
+
+function setSlide(index, direction) {
+  // Add directional swipe animation
+  if (direction === 'right') hero.classList.add('swipe-right');
+  else hero.classList.add('swipe-left');
+
+  // Text fade out in direction
+  textArea.classList.add(direction === 'right' ? 'hide-right' : 'hide-left');
+
+  // Switch background mid-animation
+  setTimeout(() => {
+    hero.style.background = backgrounds[index];
+    dots.forEach(d => d.classList.remove('active'));
+    dots[index].classList.add('active');
+  }, 500);
+
+  // Show text again after sweep
+  setTimeout(() => {
+    textArea.classList.remove('hide-right', 'hide-left');
+    textArea.classList.add('show');
+  }, 1000);
+
+  // Clean up classes
+  setTimeout(() => {
+    hero.classList.remove('swipe-right', 'swipe-left');
+    textArea.classList.remove('show');
+  }, 1600);
+}
+
+function nextSlide() {
+  current = (current + 1) % backgrounds.length;
+  setSlide(current, 'right');
+}
+
+function prevSlide() {
+  current = (current - 1 + backgrounds.length) % backgrounds.length;
+  setSlide(current, 'left');
+}
+
+function goToSlide(index) {
+  const direction = index > current ? 'right' : 'left';
+  current = index;
+  setSlide(index, direction);
+}
+
+
+
+
+
+// Fast Quote: show thank-you and clear fields after posting to hidden iframe
+(function(){
+function onSubmit(e){
+try{
+const form = e.target;
+const status = document.getElementById('fqStatus');
+const btn = document.getElementById('fastQuoteSubmit');
+if(status) status.textContent = 'Thank you for contacting us. Someone will reach out shortly.';
+if(btn){ btn.disabled = true; setTimeout(()=>{ btn.disabled = false; }, 1500); }
+setTimeout(()=>{ try{ form.reset(); }catch(_){} }, 200);
+}catch(_){ }
+}
+const ready = () => {
+const form = document.getElementById('fastQuoteForm');
+if(form && !form.__wired){ form.addEventListener('submit', onSubmit); form.__wired = true; }
+};
+if(document.readyState === 'loading'){
+window.addEventListener('DOMContentLoaded', ready, {once:true});
+} else { ready(); }
+})();
+
+// Flip button toggle (Call to Reserve)
+(function(){
+const callBtn = document.getElementById('callBtn');
+if(callBtn){
+callBtn.addEventListener('click', ()=>{
+callBtn.classList.toggle('flipped');
+});
+}
+})();
+
+// === Easter egg: open/close logic + confetti (enhanced) ===
+(function(){
+const logoBtn = document.getElementById('logoEgg');
+const overlay = document.getElementById('eggOverlay');
+const closeBtn = document.getElementById('eggClose');
+const canvas = document.getElementById('confettiCanvas');
+if(!logoBtn || !overlay) return;
+
+// Confetti burst
+function launchConfetti(){
+if(!canvas) return;
+const ctx = canvas.getContext('2d');
+const DPR = Math.max(1, window.devicePixelRatio || 1);
+const w = canvas.width = Math.floor(window.innerWidth * DPR);
+const h = canvas.height = Math.floor(window.innerHeight * DPR);
+canvas.style.display = 'block';
+
+const colors = ['#1e3a8a','#2563eb','#fbbf24','#10b981','#ef4444'];
+const count = Math.min(5000, Math.floor((window.innerWidth+window.innerHeight)/6)); // more confetti
+const particles = [];
+// emit from upper-center-ish
+const emitX = (window.innerWidth * DPR) / 2;
+const emitY = (window.innerHeight * DPR) / 3; // more central
+
+for(let i=0;i<count;i++){
+const angle = Math.random() * 2 * Math.PI;
+const speed = (Math.random()*10 + 6) * DPR; // faster & further
+particles.push({
+x: emitX,
+y: emitY,
+vx: Math.cos(angle)*speed,
+vy: Math.sin(angle)*speed,
+g: 0.0001*DPR,
+w: (Math.random()*10 + 6) * DPR, // bigger pieces
+h: (Math.random()*14 + 8) * DPR,
+rot: Math.random()*Math.PI,
+vr: (Math.random()-0.5)*0.3,
+alpha: 1,
+color: colors[Math.floor(Math.random()*colors.length)]
+});
+}
+
+const start = performance.now();
+function tick(t){
+const elapsed = t - start;
+ctx.clearRect(0,0,w,h);
+particles.forEach(p=>{
+p.vy += p.g;
+p.x += p.vx;
+p.y += p.vy;
+p.rot += p.vr;
+// fade out over time
+p.alpha = Math.max(0, 1 - elapsed/2000); // longer fade
+ctx.save();
+ctx.globalAlpha = p.alpha;
+ctx.translate(p.x, p.y);
+ctx.rotate(p.rot);
+ctx.fillStyle = p.color;
+ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+ctx.restore();
+});
+if(elapsed < 2000){ requestAnimationFrame(tick); }
+else { canvas.style.display = 'none'; ctx.clearRect(0,0,w,h); }
+}
+requestAnimationFrame(tick);
+}
+
+const open = () => { overlay.classList.add('show'); overlay.setAttribute('aria-hidden','false'); const sn = document.getElementById('ticketSerial'); if (sn) { const d = new Date(); const ymd = String(d.getFullYear()).slice(2) + String(d.getMonth()+1).padStart(2,'0') + String(d.getDate()).padStart(2,'0'); const rand = Math.floor(Math.random()*900 + 100); sn.textContent = `${ymd}-${rand}`; } launchConfetti(); };
+const close = () => { overlay.classList.remove('show'); overlay.setAttribute('aria-hidden','true'); };
+
+logoBtn.addEventListener('click', open);
+if(closeBtn) closeBtn.addEventListener('click', close);
+overlay.addEventListener('click', (e)=>{ if(e.target === overlay) close(); });
+document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') close(); });
+
+// keep canvas sized on rotate/resizes for crispness
+window.addEventListener('resize', ()=>{
+if(!canvas || canvas.style.display==='none') return;
+const DPR = Math.max(1, window.devicePixelRatio || 1);
+canvas.width = Math.floor(window.innerWidth * DPR);
+canvas.height = Math.floor(window.innerHeight * DPR);
+});
+})();
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,121 @@
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+/*
+html{
+    font-size:100%;
+    -webkit-text-size-adjust:100%;
+}
+    */
+/* Header Responsive adjustments */
+
+@media (max-width: 992px){
+    .container.nav{
+        flex-direction:column;
+        gap:1rem;
+}
+
+.navLikns {
+    flex-wrap:wrap;
+    order:3;
+}
+.ctn{
+    order:2;
+}
+.brand{
+    order:1,
+}
+}
+/* End of the header section */
+
+
+
+
+/* Fast Quote Respomsive designs */
+@media (max-width:1200px){
+    #fast-quote .body{
+        right:150px;
+        width:500px;
+    }
+    #fast-quote .title{
+        font-size:34px;
+    }
+}
+
+
+@media (max-width: 992px){
+    #fast-quote{
+        padding:40px 20px;
+        height: auto;
+    }
+#fast-quote .body{
+    position:relative;
+    right:auto;
+    top:auto;
+    width:90%;
+    margin:0 auto;
+}
+#fast-quote .title{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:30px;
+}
+#fastQuoteForm .row{
+    flex-direction:column;
+    gap:10px;
+}
+#fastQuoteSubmit{
+    width:100%;
+}
+}
+
+@media (max-width:768px){
+    #fast-quote{
+        padding:30px 15px;
+    }
+    #fast-quote .title{
+        font-size:26px;
+        margin-bottom:24px;
+    }
+    #fast-quote .body{
+        width:100%;
+        padding:16px;
+        border-radius:12px;
+    }
+   #fastQuoteForm input,
+   #fastQuoteForm select,
+   #fastQuoteForm textarea{
+    font-size:14px;
+    padding:10px 14px;
+   }
+   #fastQuoteSubmit{
+    font-size:15px;
+    padding:14px 18px;
+   }
+}
+
+@media (max-width:480px){
+    #fast-quote .title{
+        font-size:22px;
+    }
+    #fast-quote .body{
+        padding:12px;
+        width:100%;
+    }
+    #fastQuoteForm input,
+    #fastQuoteForm select,
+    #fastQuoteForm textarea{
+        font-size:13px;
+    }
+    #fastQuoteSubmit{
+        font-size:14px;
+        padding:12px 16px;
+    }
+}
+
+
+
+

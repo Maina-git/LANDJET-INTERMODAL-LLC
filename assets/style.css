@@ -1,0 +1,538 @@
+
+/* start of the header section */
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    z-index:1000;
+    /*padding:1rem 0;*/
+ }
+
+
+.container.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap:50px;
+  max-width: 100%;
+  padding: 0 2rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo-egg {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease;
+}
+
+.logo-egg:hover {
+  transform: scale(1.05);
+}
+.text-logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.15rem;
+  color: white;
+  font-weight:400;
+  margin-left: 0.5rem;
+}
+.subtext-logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.5rem;
+  color: #e0e7ff;
+  margin-left: 0.5rem;
+}
+
+.navlinks {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  gap: 1rem;
+}
+
+.navlinks a {
+  position: relative;
+  color: #e0e7ff;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  font-size:0.8rem;
+  transition: color 0.2s ease;
+  padding-bottom: 3px; /* space for the underline */
+}
+
+.navlinks a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.navlinks a:hover {
+  color: #ffffff;
+}
+
+.navlinks a:hover::after {
+  width: 100%;
+}
+
+/* call to action section */
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.cta .btn {
+  border: 1px solid #ffffff;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+.cta .btn:hover {
+  background: #ffffff;
+  color: #2563eb;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(255,255,255,0.2);
+}
+.cta .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.cta .btn:hover::before {
+  left: 125%;
+}
+
+.cta .btn-outline {
+  background: transparent;
+  border: 1px solid #e0e7ff;
+  color: #e0e7ff;
+  position: relative;
+  overflow: hidden;
+}
+.cta .btn-outline:hover {
+  color: #2563eb;
+  background: #ffffff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(255,255,255,0.2);
+}
+
+.cta .btn-outline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.cta .btn-outline:hover::before {
+  left: 130%;
+}
+
+/* End of the header section */
+
+/*Section styling*/
+
+section{
+  width:100%;
+}
+
+/*hero sectioon */
+.hero{
+    position:relative;
+    height:auto;
+    padding:20px;
+    width:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(135deg, #e8ecf3, #d9e2ec);
+    transition: background 1s ease-in-out;
+}
+.hero::before{
+    position:absolute;
+    inset: 0;
+    background:rgba(0, 0, 0, 0.85);
+    transform: translateX(-100%);
+    opacity:0;
+    z-index: 3;
+    pointer-events:none;
+}
+/* Sweep right → left */
+.hero.swipe-right::before {
+  animation: shadowSwipeRight 1.2s forwards ease-in-out;
+}
+/* Sweep left → right */
+.hero.swipe-left::before {
+  animation: shadowSwipeLeft 1.2s forwards ease-in-out;
+}
+@keyframes shadowSwipeRight{
+    0%{ transform:translateX(-100%); opacity: 1;}
+    50%{ transform: translateX(0%); opacity: 1;}
+    100%{ transform:translateX(100%); opacity: 0;}
+}
+@keyframes shadowSwipeLeft{
+    0%{ transform:translateX(100%); opacity: 1;}
+    50%{ transform: translateX(0%); opacity: 1;}
+    100%{ transform:translateX(-100%); opacity: 0;}
+}
+    /* --HERO CONTENT --- */
+
+.hero-content{
+    position:relative;
+    text-align:center;
+    max-width:750px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:20px;
+    z-index:3;
+    transition:transform 0.8s ease, opacity 0.8s ease;
+}
+/*  --TEXT & BUTTONS ---*/
+.badge{
+    display:inline-block;
+    margin:0 auto;
+    font-family:"Poppins", sans-serif;
+    color:gray;
+    background:rgba(255, 255, 255, 0.1);
+    padding:6px 12px;
+    border-radius:9999px;
+    font-size:0.9rem;
+    margin-bottom:10px;
+}
+.icon-content{
+  position:relative;
+  display:inline-block;
+  z-index:2;
+  margin-bottom:20px;
+}
+.icon{
+  width:300px;
+  height:auto;
+}
+.text-area{
+  position:relative;
+  display:inline-block;
+  z-index:2;
+}
+.text-area.hide-right h1,
+.text-area.hide-right p{
+opacity:0;
+transform:translateX(-60px);
+transition:all 0.6s ease;
+}
+.text-area.hide-left h1,
+.text-area.hide-left p{
+  opacity:0;
+  transform: translateX(-60px);
+  transition: all 0.6s ease;
+}
+.text-area.show h1, 
+.text-area.show p{
+opacity:1;
+transform:translateX(0);
+transition:all 0.8s ease;
+}
+.hero-content h1{
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:1rem;
+    color:black;
+    font-family:"Poppins", sans-serif;
+}
+.hero-content p{
+    font-size:1rem;
+    margin-bottom:1.5rem;
+    font-family:"Poppins", sans-serif;
+    color:#4e4e4e;
+}
+.hero-content .btn{
+    padding:10px 18px;
+    border-radius:8px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:all 0.3s ease;
+    font-family:"Poppins", sans-serif;
+}
+.hero-content .btn:hover{
+    background:#1e40af;
+}
+
+.hero-content .btn-outline{
+    background:transparent;
+    border:2px solid black;
+    color:black;
+}
+.hero-content .btn-outline:hover{
+    background:rgba(255, 255, 255, 0.2);
+}
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:1.5rem;
+    font-size:0.9rem;
+    color:#4e4e4e;
+    font-family:"Poppins", sans-serif;
+}
+.stat .val{
+    font-size:1.3rem;
+    font-weight:bold;
+}
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.2);
+    border:none;
+    color:#1f2937;
+    font-size:2rem;
+    cursor:pointer;
+    padding:10px 16px;
+    border-radius:50%;
+    transition:background 0.3s;
+    z-index:4;
+}
+.arrow:hover{
+    background:rgba(255,255,255,0.4);
+}
+.arrow.left{
+    left:20px;
+}
+.arrow.right{
+    right:20px;
+}
+.dots{
+    position:absolute;
+    bottom:30px;
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    width:100%;
+    z-index:4;
+}
+.dot{
+    width:50px;
+    height:3px;
+    background:#1e3a8a;
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+.dot.active{
+    background:white;
+    transform:scale(1.2);
+}
+/* End of the hero swipe animations */
+
+
+/* ===========================
+   FAST QUOTE CARD (FULL CSS)
+   =========================== */
+
+/* Fast Quote Card */
+#fast-quote {
+  background:lightgray;
+  overflow: hidden;
+  border: 0.5px solid #e5e7eb;
+  padding: 30px;
+  position: relative;
+  height: 120vh;
+}
+/* Title Styling */
+#fast-quote .title {
+  color: black;
+  font-size: 40px;
+  margin-bottom: 50px;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+#fast-quote .title::before {
+  margin-right: 10px;
+  font-size: 28px;
+  font-family: "Poppins", sans-serif;
+}
+#fast-quote .title::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15));
+  transform: skewX(-20deg);
+}
+/* Body/Form Container */
+#fast-quote .body {
+  padding: 20px;
+  position: absolute;
+  right: 300px;
+  top: 100px;
+  width: 600px;
+  box-shadow:black;
+  background: white;
+}
+/* ===========================
+   FORM STYLING + ANIMATIONS
+   =========================== */
+#fastQuoteForm {
+  display: flex;
+  flex-direction: column;
+  font-family:"Poppins", sans-serif;
+  gap: 10px;
+}
+/* Input and Select Base Styles */
+#fastQuoteForm input,
+#fastQuoteForm select,
+#fastQuoteForm textarea {
+  width: 100%;
+  border: 0;
+  padding: 13px 18px;
+  border-bottom: 1px solid #7698db;
+  font-size: 13px;
+  transition: all 0.25s ease;
+  background: none;
+  font-family: inherit;
+  color: #1f2937;
+  position: relative;
+  overflow: hidden;
+}
+/* Animated underline effect */
+#fastQuoteForm input::after,
+#fastQuoteForm select::after,
+#fastQuoteForm textarea::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #2563eb, #1e3a8a);
+  transition: width 0.4s ease;
+}
+#fastQuoteForm input:hover::after,
+#fastQuoteForm select:hover::after,
+#fastQuoteForm textarea:hover::after {
+  width: 100%;
+}
+#fastQuoteForm input:focus::after,
+#fastQuoteForm select:focus::after,
+#fastQuoteForm textarea:focus::after {
+  width: 100%;
+  background: linear-gradient(90deg, #1e40af, #2563eb);
+}
+/* Focus State */
+#fastQuoteForm input:focus,
+#fastQuoteForm select:focus,
+#fastQuoteForm textarea:focus {
+  outline: none;
+  border-color: rgb(212, 209, 209);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+  background: #ffffff;
+}
+/* Hover State */
+#fastQuoteForm input:hover,
+#fastQuoteForm select:hover,
+#fastQuoteForm textarea:hover {
+  transform: translateY(-2px);
+}
+/* Placeholder Styling */
+#fastQuoteForm input::placeholder,
+#fastQuoteForm textarea::placeholder {
+  color: #9ca3af;
+}
+/* Select Styling */
+#fastQuoteForm select {
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  padding-right: 40px;
+  appearance: none;
+}
+/* Row Layout for Side-by-Side Fields */
+#fastQuoteForm .row {
+  display: flex;
+  gap: 14px;
+}
+#fastQuoteForm .row.cols-2 > * {
+  flex: 1;
+}
+/* Textarea Specific */
+#fastQuoteForm textarea {
+  min-height: 110px;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.6;
+}
+/* Submit Button */
+#fastQuoteSubmit {
+  background:#1e40af;
+  color: white;
+  padding: 16px 28px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+#fastQuoteSubmit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.45);
+  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+}
+#fastQuoteSubmit:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+/* Status Message */
+#fqStatus {
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+  margin: 12px 0 0;
+  min-height: 18px;
+  font-weight: 500;
+}
+
+
+
+
