@@ -159,13 +159,9 @@
 
 /* End of the header section */
 
-/*Section styling*/
-
-section{
-  width:100%;
-}
-
 /*hero sectioon */
+
+
 .hero{
     position:relative;
     height:auto;
@@ -179,6 +175,7 @@ section{
     transition: background 1s ease-in-out;
 }
 .hero::before{
+    content:"";
     position:absolute;
     inset: 0;
     background:rgba(0, 0, 0, 0.85);
@@ -265,7 +262,7 @@ transition:all 0.8s ease;
 }
 .hero-content h1{
     font-size:3rem;
-    font-weight:700;
+    font-weight:300;
     margin-bottom:1rem;
     color:black;
     font-family:"Poppins", sans-serif;
@@ -318,11 +315,11 @@ transition:all 0.8s ease;
     background:rgba(0,0,0,0.2);
     border:none;
     color:#1f2937;
-    font-size:2rem;
+    font-size:1.5rem;
     cursor:pointer;
     padding:10px 16px;
     border-radius:50%;
-    transition:background 0.3s;
+    transition:background 0.3s ease-in-out;
     z-index:4;
 }
 .arrow:hover{
