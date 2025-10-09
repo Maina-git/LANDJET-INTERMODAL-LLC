@@ -1,0 +1,129 @@
+/* Instagram Card */
+#instagram {
+  background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 25%, #FCB045 50%, #F77737 75%, #C13584 100%);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(131, 58, 180, 0.25), 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 0;
+  border: none;
+}
+
+/* Title Styling - Centered */
+#instagram .title {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  padding: 20px 28px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+#instagram .title a {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-weight: 700 !important;
+  color: white !important;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+#instagram .title a:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+#instagram .title img {
+  height: 32px !important;
+  width: 32px !important;
+  border-radius: 8px !important;
+  object-fit: cover !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+#instagram .title img:hover {
+  transform: scale(1.1);
+}
+
+/* Body/Widget Container */
+#instagram .body {
+  padding: 0;
+  background: white;
+}
+
+/* SnapWidget iframe - Make clickable to Instagram */
+#instagram .ig-embed {
+  position: relative;
+  cursor: pointer;
+}
+
+#instagram .ig-embed iframe {
+  width: 100% !important;
+  height: 510px !important;
+  border: none !important;
+  overflow: hidden !important;
+}
+
+/* Optional: Add a subtle overlay hint that it's clickable */
+#instagram .ig-embed::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  pointer-events: none;
+  transition: background 0.3s ease;
+  z-index: 1;
+}
+
+#instagram .ig-embed:hover::before {
+  background: rgba(131, 58, 180, 0.03);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #instagram .title {
+    padding: 16px 20px;
+    gap: 10px !important;
+  }
+  
+  #instagram .title a {
+    font-size: 16px;
+  }
+  
+  #instagram .title img {
+    height: 28px !important;
+    width: 28px !important;
+  }
+  
+  #instagram .ig-embed iframe {
+    height: 450px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #instagram .title {
+    padding: 14px 16px;
+    gap: 8px !important;
+  }
+  
+  #instagram .title a {
+    font-size: 15px;
+    letter-spacing: 0.5px;
+  }
+  
+  #instagram .title img {
+    height: 26px !important;
+    width: 26px !important;
+  }
+  
+  #instagram .ig-embed iframe {
+    height: 400px !important;
+  }
+}

@@ -4,20 +4,12 @@
     margin:0;
     box-sizing:border-box;
 }
-/*
-html{
-    font-size:100%;
-    -webkit-text-size-adjust:100%;
-}
-    */
-/* Header Responsive adjustments */
-
+/* Responsive Header */
 @media (max-width: 992px){
     .container.nav{
         flex-direction:column;
         gap:1rem;
 }
-
 .navLikns {
     flex-wrap:wrap;
     order:3;
@@ -30,9 +22,6 @@ html{
 }
 }
 /* End of the header section */
-
-
-
 
 /* Fast Quote Respomsive designs */
 @media (max-width:1200px){
@@ -116,5 +105,39 @@ html{
 }
 
 
+/*  Responsive Design Instagram*/
+@media (max-width:768px){
+#instagram .title{
+    padding:16px 20px;
+    gap:10px;
+}
+#instagram .title a{
+    font-size:16px;
+}
+#instagram .title img{
+    height:28px;
+    width:28px;
+}
+#instagram .ig-embed iframe{
+    height:450px;
+}
+}
+@media (max-width:480px){
+    #instagram .title{
+        padding:14px 16px;
+        gap:8px;
+    }
+    #instagram .title a{
+        font-size:15px;
+        letter-spacing:0.5px;
+    }
+    #instagram .title img{
+        height:26px;
+        width:26px;
+    }
+    #instagram .ig-embed iframe{
+        height:400px;
+    }
+}
 
 

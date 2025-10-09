@@ -531,5 +531,192 @@ transition:all 0.8s ease;
 }
 
 
+/* start of instagram */
+
+
+/* Instagram Card */
+#instagram {
+  background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 25%, #FCB045 50%, #F77737 75%, #C13584 100%);
+  box-shadow: 0 10px 25px rgba(131, 58, 180, 0.25), 0 4px 10px rgba(0, 0, 0, 0.1);
+  height:auto;
+  padding:50px 20px;
+  font-family:"Poppins", sans-serif;
+  color:white;
+  text-transform: lowercase;
+  border: none;
+}
+
+#instagram .title{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:20px 28px;
+  background:rgba(255, 255, 255, 0.15);
+  backdrop-filter:blur(10px);
+  border-bottom:2px solid rgba(255, 255, 255, 0.2)
+}
+
+#instagram  .title a{
+  display:inline-flex;
+  align-items:center;
+  font-weight:300;
+  color:white;
+  font-size:1.5rem;
+  text-decoration:none;
+  transition:transform 0.2s ease, opacity 0.2s ease;
+  letter-spacing:1px;
+}
+#instagram .title a:hover{
+  transform:scale(1.05);
+  opacity:0.9;  
+}
+#instagram .title img{
+  height:32px;
+  width:32px;
+  border-radius:8px;
+  object-fit:cover;
+  box-shadow:0 2px 8px rgba(0, 0, 0, 0.2);
+  transition:transform 0.2s ease;
+}
+#instagram .title img:hover{
+  transform:scale(1.1);
+}
+#instagram .body{
+  padding:0;
+  background:none;
+}
+#instagram .ig-embed iframe{
+  width:100%;
+  overflow:hidden; 
+}
+
+/* PortPro Portal card */
+
+
+.cardport-pro{
+  background:white;
+  box-shadow:0.4px 12px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(0, 0, 0, 0.04);
+  overflow:hidden;
+  border:1px solid #e5e7eb;
+  margin-top:18px;
+  transition:box-shadow 0.3s ease;
+}
+.cardport-pro:hover{
+  box-shadow:0.8px 20px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.cardport-pro .title{
+  background:#1e3a8a;
+  color:white;
+  padding:20px 28px;
+  font-size:30px;
+  font-family:"Poppins", sans-serif;
+  font-weight:300;
+  letter-spacing:0.3px;
+  border-bottom:3px solid #0ea5e9;
+}
+
+.cardport-pro .body{
+  padding:28px;
+  background:linear-gradient(180deg, #ffff 0%, #f8fafc 100%);
+}
+.cardport-pro .grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:16px;
+}
+.cardport-pro .body p{
+  color:#475569;
+  line-height:1.7;
+  margin:0 0 12px 0;
+}
+.cardport-pro .body p:first-child{
+  font-size:16px;
+  color:#334155;
+  margin-bottom:16px;
+  font-weight:300;
+  font-family:"Poppins", sans-serif;
+}
+.cardport-pro .body> div > div[style*="display:flex"]{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:16px;
+}
+
+.btn-pro{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+  color:white;
+  padding:13px 24px;
+  border-radius:10px;
+  font-size:15px;
+  font-weight:600;
+  font-family:"Poppins", sans-serif;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  transition:all 0.3s ease;
+  box-shadow:0 4px 12px rgba(14, 165, 233, 0.4);
+  letter-spacing:0.3px;
+}
+.btn-pro:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 16px rgba(14, 165, 233, 0.4);
+  background:linear-gradient(135deg, #0284c7, 0%, #0369a1 100%);
+}
+.btn-pro:active{
+  transform:translateY(0);
+  box-shadow:0 4px 12px rgba(14, 165, 233, 0.3);
+}
+.btn-pro-outline{
+  background:white;
+  color:#0284c7;
+  color:#0369a1;
+  box-shadow:0 2px 8px rgba(14, 164, 233, 0.15);
+}
+.btn-pro-outline:hover{
+  background:#f0f9ff;
+  border-color:#0284c7;
+  color:#0369a1;
+  box-shadow:0 4px 12px rgba(14, 164, 233, 0.25);
+}
+.cardport-pro .body p[style*="font-size:12px"]{
+  font-size:13px;
+  color:#64748b;
+  margin-top:12px;
+  padding:12px 16px;
+  background:#f1f5f9;
+  font-family:"Poppins", sans-serif;
+  border-left:3px solid #0ea5e9;
+  border-radius:6px;
+  line-height:1.6;
+}
+.cardport-pro .body p[style*="font-size:14px"]{
+  font-size:13px;
+  color:#64748b;
+  margin-top:16px;
+  padding:14px 18px;
+  font-family:"Poppins", sans-serif;
+  background:#fef3c7;
+  border-left:4px solid #f59e0b;
+  border-radius:8px;
+  line-height:1.6;
+  font-weight:500;
+}
+
+.cardport-pro .body p[style*="font-size:14px"] br {
+margin-bottom:4px;
+}
+
+
+
+
+
+
+
 
 
