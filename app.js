@@ -1,43 +1,46 @@
+
 const hero = document.getElementById('hero');
 const textArea = document.getElementById('text-area');
 const dots = document.querySelectorAll('.dot');
 
 const backgrounds = [
- 
-"none",
-"none",
-"none"
+  "transparent", // slide 1
+  "transparent", // slide 2
+  "transparent"  // slide 3
 ];
 
-
 let current = 0;
+let intervalId = null;
+let isAnimating = false;
 
 function setSlide(index, direction) {
-  // Add directional swipe animation
-  if (direction === 'right') hero.classList.add('swipe-right');
-  else hero.classList.add('swipe-left');
 
-  // Text fade out in direction
-  textArea.classList.add(direction === 'right' ? 'hide-right' : 'hide-left');
+  if (isAnimating) return;
+  isAnimating = true;
+  if (direction === 'right') {
+    hero.classList.add('swipe-right');
+    textArea.classList.add('hide-right');
+  } else {
+    hero.classList.add('swipe-left');
+    textArea.classList.add('hide-left');
+  }
 
-  // Switch background mid-animation
   setTimeout(() => {
     hero.style.background = backgrounds[index];
     dots.forEach(d => d.classList.remove('active'));
     dots[index].classList.add('active');
-  }, 500);
+  }, 600);
 
-  // Show text again after sweep
   setTimeout(() => {
     textArea.classList.remove('hide-right', 'hide-left');
     textArea.classList.add('show');
-  }, 1000);
+  }, 1200);
 
-  // Clean up classes
   setTimeout(() => {
     hero.classList.remove('swipe-right', 'swipe-left');
     textArea.classList.remove('show');
-  }, 1600);
+    isAnimating = false;
+  }, 2000);
 }
 
 function nextSlide() {
@@ -45,16 +48,36 @@ function nextSlide() {
   setSlide(current, 'right');
 }
 
-function prevSlide() {
-  current = (current - 1 + backgrounds.length) % backgrounds.length;
-  setSlide(current, 'left');
+function startAutoSwipe() {
+  stopAutoSwipe();
+  intervalId = setInterval(() => {
+    nextSlide();
+  }, 6000);
 }
 
-function goToSlide(index) {
-  const direction = index > current ? 'right' : 'left';
-  current = index;
-  setSlide(index, direction);
+function stopAutoSwipe() {
+  if (intervalId) {
+    clearInterval(intervalId);
+    intervalId = null;
+  }
 }
+
+hero.addEventListener('mouseenter', stopAutoSwipe);
+hero.addEventListener('mouseleave', startAutoSwipe);
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    stopAutoSwipe();
+  } else {
+    startAutoSwipe();
+  }
+});
+
+hero.style.background = backgrounds[0];
+dots[0].classList.add('active');
+startAutoSwipe();
+
+
 
 
 
