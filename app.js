@@ -1,7 +1,11 @@
-
+/* Variables */
 const hero = document.getElementById('hero');
 const textArea = document.getElementById('text-area');
 const dots = document.querySelectorAll('.dot');
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const navlinks = document.querySelector('.header .container.nav  .navlinks');
+const cta = document.querySelector(".header .container.nav .cta");
+
 
 const backgrounds = [
   "transparent", // slide 1
@@ -77,11 +81,51 @@ hero.style.background = backgrounds[0];
 dots[0].classList.add('active');
 startAutoSwipe();
 
+/*  Mobile Toggle Menu */
+if(mobileMenuToggle){
+  mobileMenuToggle.addEventListener("click", ()=>{
+    navlinks.classList.toggle("active");
+    cta.classList.toggle('active');
+  
+  
+  const icon = mobileMenuToggle.querySelector('i');
+  if(icon){
+    if(navlinks.classList.contains('active')){
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    }else{
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  }
+  });
+}
 
+const navLinks = document.querySelectorAll('.header .container.nav .navlinks a');
+navLinks.forEach(link=>{
+  link.addEventListener('click', ()=>{
+    navlinks.classList.remove('active');
+    cta.classList.remove('active');
 
+    const icon = mobileMenuToggle.querySelector('i');
+    if(icon){
+      icon.classList.remove('fa-items');
+      icon.classList.add('fa-bars');
+    }
+  });
+});
+document.addEventListener("click", (e)=>{
+  if(!e.target.closest('.header .container.nav')){
+    navlinks.classList.remove('active');
+    cta.classList.remove('active');
 
-
-
+    const icon = mobileMenuToggle.querySelector("i");
+    if(icon){
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  }
+});
 
 // Fast Quote: show thank-you and clear fields after posting to hidden iframe
 (function(){
