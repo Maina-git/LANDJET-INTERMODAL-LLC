@@ -283,6 +283,343 @@
 }
 
 
+/* Responsive - Tablets */
+@media (max-width: 768px) {
+  #coverage {
+    padding: 40px 0;
+  }
+  
+  #coverage .container {
+    padding: 0 24px;
+  }
+  
+  #coverage h2 {
+    font-size: 24px !important;
+  }
+  
+  #coverage > .container > p {
+    font-size: 15px;
+  }
+  
+  #coverage .grid.lanes {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 20px !important;
+  }
+  
+  #coverage .card .body {
+    padding: 18px;
+    font-size: 14px;
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+  #coverage {
+    padding: 32px 0;
+  }
+  
+  #coverage .container {
+    padding: 0 16px;
+  }
+  
+  #coverage h2 {
+    font-size: 22px !important;
+  }
+  
+  #coverage > .container > p {
+    font-size: 14px;
+  }
+  
+  #coverage .grid.lanes {
+    gap: 10px;
+    margin-top: 16px !important;
+  }
+  
+  #coverage .card .body {
+    padding: 16px;
+  }
+}
+
+/* Responsive code ==== COVERAGE ==== */
+@media (max-width:768px){
+    #coverage {
+        padding: 40px 0;
+    }
+    #coverage h2{
+        font-size:24px;
+    }
+    #coverage> .container > p{
+        font-size:15px;
+    }
+    #coverage .card .body{
+        padding:18px;
+        font-size:14px;
+    }
+}
+/* Mobile */
+@media(max-width:480px){
+    #coverage{
+        padding:32px 0;
+    }
+    #coverage .container{
+        padding:0 16px;
+    }
+    #coverage h2{
+        font-size:22px;
+    }
+    #coverage> .container>p{
+        font-size:14px;
+    }
+    #coverage .grid.lanes{
+        gap:10px;
+        margin-top:16px;
+        grid-template-columns: 1fr;
+    }
+    #coverage .card .body{
+        padding:16px;
+    }
+}
+/* fleet responsive animations */
+@media (max-width:768px){
+    #fleet{
+        padding:40px 0;
+    }
+    #fleet .container{
+        padding: 40px 0;
+    }
+    #fleet h2{
+        font-size:24px;
+    }
+    #fleet .grid.fleet{
+        grid-template-columns: 1fr;
+        gap:12px;
+        margin-top:20px;
+    }
+    #fleet .card .body{
+        padding:18px 20px;
+        font-size:14px;
+    }
+}
+@media (max-width:480px){
+    #fleet{
+        padding:32px 0;
+    }
+    #fleet .container{
+       padding:0 16px;
+    }
+    #fleet h2{
+        font-size:22px;
+    }
+    #fleet .grid.fleet{
+        gap:10px;
+        margin-top:16px;
+    }
+    #fleet .card .body{
+        padding:16px 18px;
+    }
+}
+/* Parking Responsiveness */
+@media (max-width:768px){
+    #parking{
+        padding:40px 0;
+    }
+    #parking .container{
+        padding:0 24px;
+    }
+    .parking-hero{
+        grid-template-columns:1fr;
+        gap:28px;
+    }
+    #parking h2{
+        font-size:24px;
+    }
+    #parking p{
+        font-size:15px;
+    }
+    #parking div[style*="display:flex"]{
+        margin-top:14px;
+    }
+    .flip-btn{
+        width:48%;
+        min-width:170px;
+    }
+    .btn-outline{
+        flex:1;
+        min-width:200px;
+    }
+    #parking .card .title{
+        font-size:17px;
+        padding:14px 16px;
+    }
+    #parking .card .body{
+        padding:18px;
+        font-size:14px;
+    }
+}
+@media(max-width:480px){
+    #parking{
+        padding:32px 0;
+    }
+    #parking .container{
+        padding:0 16px;
+    }
+    .parking-hero {
+        gap:24px;
+    }
+    #parking h2{
+        font-size:22px;
+    }
+    #parking p{
+        font-size:14px;
+    }
+    #parking div[style*="display:flex"]{
+        margin-top:12px;
+        flex-direction:column;
+    }
+    .flip-btn{
+        width:100%;
+        min-width:unset;
+    }
+    .btn-outline{
+        width:100%;
+        min-width:unset;
+        justify-content:center;
+    }
+    .flip-btn-front,
+    .flip-btn-back{
+        font-size:14px;
+    }
+    .flip-btn-back a{
+        font-size:14px;
+    }
+    #parking .card .title{
+        font-size:16px;
+        padding:14px 16px;
+    }
+    #parking .card .body{
+        padding:16px;
+        font-size:14px;
+        line-height:1.8;
+    }
+
+}
+
+/* Responsive Contact page */
+@media (max-width:768px){
+    #contact{
+        padding:40px 0;
+    }
+    #contact .container{
+        padding: 0 24px;
+    }
+    .contact-hero{
+        grid-template-columns: 1fr;
+        gap:28px;
+    }
+    #contact h2{
+        font-size:24px;
+    }
+    #contact div[style*="display:grid"]> div{
+        font-size:14px;
+    }
+    #contact .card .title{
+        font-size:17px;
+        padding:14px 18px;
+    }
+    #contact .card .body{
+        padding:18px;
+        font-size:14px;
+    }
+}
+
+@media (max-width:480px){
+    #contact {
+        padding:32px 0;
+    }
+    #contact .container{
+        padding: 0 16px;
+    }
+    .contact-hero{
+        gap:24px;
+    }
+    #contact h2{
+        font-size:22px;
+    }
+    #contact div[style*="display:grid"]{
+        gap:10px
+    }
+    #contact div[style*="dicplay:grid"] > div {
+        font-size:14px;
+        flex-wrap:wrap;
+    }
+    #contact div[style*="display:grid"] a{
+        word-break: break-word;
+    }
+    #contact .card .title{
+        font-size:16px;
+        padding:14px 16px;
+    }
+    #contact .card .body{
+        padding:16px;
+        font-size:14px;
+        line-height:1.8;
+    }
+}
+
+/* Respomsive Footer */
+@media (max-width:768px){
+    .footer{
+        padding:0 24px;
+    }
+    .footer .container{
+        padding: 0 24px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:16px;
+    }
+    .footer .container > div:first-child{
+        font-size:13px;
+    }
+    .footer .container > div:nth-child(2){
+        gap:20px;
+        width:100%;
+    }
+    .footer a{
+        font-size:13px;
+    }
+    .footer .container > div:last-child{
+        padding-top:16px;
+        text-align:left;
+    }
+}
+@media (max-width:480px){
+    .footer{
+        padding:28px 0;
+    }
+    .footer .container{
+        padding: 0 16px;
+        gap:14px;
+    }
+    .footer .container > div:first-child{
+        font-size:12px;
+    }
+    .footer .container > div:nth-child(2){
+        flex-direction:column;
+        gap:12px;
+    }
+    .footer a{
+        font-size:13px;
+    }
+    .footer .container > div:last-child{
+        font-size:11px;
+        padding-top:14px;
+    }
+}
+
+
+
+
 
 
 

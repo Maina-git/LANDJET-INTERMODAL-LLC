@@ -1,13 +1,14 @@
- 
 const hero = document.getElementById('hero');
 const textArea = document.getElementById('text-area');
 const dots = document.querySelectorAll('.dot');
 
 const backgrounds = [
-  'linear-gradient(135deg, #e8ecf3, #d9e2ec)',
-  'linear-gradient(135deg, #e8ecf3, #d9e2ec)',
-  'linear-gradient(135deg, #e8ecf3, #d9e2ec)'
+ 
+"none",
+"none",
+"none"
 ];
+
 
 let current = 0;
 
