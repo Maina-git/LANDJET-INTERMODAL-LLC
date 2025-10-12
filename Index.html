@@ -149,7 +149,6 @@ body::before { background-size: 90vmin; background-position: center 35%; opacity
 </style>
 </head>
 <body>
-  
 <header class="header">
 <div class="container nav">
 <div class="brand">
@@ -164,16 +163,12 @@ body::before { background-size: 90vmin; background-position: center 35%; opacity
 <div style="font-size:12px;color:#e0e7ff" class="subtext-logo">Port Drayage • Yard Parking • Transloading</div>
 </div>
 </div>
-
 <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
     <i class="fa-solid fa-bars"></i>
 </button>
-
-
-
 <nav class="navlinks">
         <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
+        <a href="About.html">About Us</a>
         <a href="#services">Services</a>
         <a href="#coverage">Coverage</a>
         <a href="#fleet">Fleet</a>
@@ -186,12 +181,6 @@ body::before { background-size: 90vmin; background-position: center 35%; opacity
 </div>
 </div>
 </header>
-
-
-
-
-
-
 
 <!-- === Easter egg modal markup (added) === -->
 <div id="eggOverlay" class="egg-overlay" role="dialog" aria-modal="true" aria-labelledby="eggTitle" aria-hidden="true">
@@ -224,9 +213,6 @@ body::before { background-size: 90vmin; background-position: center 35%; opacity
 <main>
 <!-- HERO + FAST QUOTE -->
 <section class="section">
-
-
-
 <div class="hero" id="hero">
 <div class="hero-content">
   <div style="margin-bottom:50px"></div>
@@ -412,49 +398,114 @@ style="border:none; overflow:hidden; width:100%; height:510px;"
 title="Posts from Instagram"></iframe>
 </div>
 </div>
-
-<!-- PortPro info block -->
+<!-- Port pro info link-->
 <div class="cardport-pro" style="margin-top:18px;">
-<div class="title">PortPro – Customer &amp; Dispatch Portal</div>
-<div class="body">
-<div class="grid" style="grid-template-columns:1fr;gap:16px">
+  <div class="title">PortPro - Customer &amp; Dispatch Portal</div>
+  <div class="body">
+    <div class="grid">
+      <div>
+        <p style="color:#475569">Access load details, appointments, live status, documents, and invoices via our PortPro portal.</p>
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px">
+         <a class="btn-pro" href="https://app.portpro.io" target="_blank" rel="noreferrer">Open PortPro</a>
+         <a class="btn-pro btn-outline" href="mailto:operations@landjetintermodal.com">Request Portal Access</a>
+        </div>
+      <p style="font-size:12px; color:#475569; margin-top:8px">
+         Don't have an account yet? Click "Request Portal Access" and we'll get you set up.
+      </p>
+       <p style="font-size:14px;color:#475569;margin-top:10px">
+          Preview under test account.<br/>Admintest@admin.com, ABC123DEF456
+        </p>
+      </div>
 <div>
-<p style="color:#475569">
-Access load details, appointments, live status, documents, and invoices via our PortPro portal.
-</p>
-<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
-<a class="btn-pro" href="https://app.portpro.io" target="_blank" rel="noreferrer">Open PortPro ↗</a>
-<a class="btn-pro btn-outline" href="mailto:operations@landjetintermodal.com">Request Portal Access</a>
-</div>
-<p style="font-size:12px;color:#475569;margin-top:8px">
-Don’t have an account yet? Click “Request Portal Access” and we’ll get you set up.
-</div><p style="font-size:14px;color:#475569;margin-top:10px"> Preview under test account.
-<br/>Admintest@admin.com, ABC123DEF456</div>
-</p>
-</div>
+  <img src="assets/portpro.jpg" alt="PortPro Dashboard preview" class="portpro-image">
+  </div>
+    </div>
+  </div>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services" class="section" style="background:#f1f5f9">
-<div class="container">
-<h2 style="font-size:28px;margin:0 0 8px">Services</h2>
-<p style="color:#475569;max-width:800px">
-End-to-end port solutions tailored to importers, exporters, and freight forwarders.
-</p>
-<div class="grid services" style="margin-top:16px">
-<div class="card"><div class="body"><strong>🚚 Port Drayage (LA/LB)</strong><br/>Live, drop, and appointment drays including night gates. Smart slot automated appointment system.</div></div>
-<div class="card"><div class="body"><strong>📦 Transloading &amp; Cross-dock</strong><br/>Fast-turn cross-dock and short-term storage via partner facilities.</div></div>
-<div class="card"><div class="body"><strong>🛡️ Heavy &amp; Overweight</strong><br/>Tri-axle chassis as needed.</div></div>
-<div class="card"><div class="body"><strong>📍 Yard Parking (Eastvale, CA)</strong><br/>Month-to-month truck &amp; trailer parking; customer container parking. Gated access, cameras, and lighting.</div></div>
-<div class="card"><div class="body"><strong>⏱️ 24/7 Dispatch &amp; Tracking</strong><br/>Proactive updates with geo-stamped milestones. After-hours support.</div></div>
-<div class="card"><div class="body"><strong>❄️ Reefer</strong><br/>Specialized reefer container moves. Nose-mount gensets and plug-ins available.</div></div>
-</div>
-</div>
+<!-- Services section  -->
+
+<section id="services" class="section">
+    <div class="container">
+        <h2>Services</h2>
+        <p>
+            End-to-end port solutions tailored to importers, exporters, and freight forwarders.
+        </p>
+        <div class="grid services">
+            <div class="card">
+                <div class="body">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <span class="service-title">Port Drayage (LA/LB)</span>
+                    <div class="service-description">
+                        Live, drop, and appointment drays including night gates. Smart slot automated appointment system.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="body">
+                    <div class="service-icon">
+                        <i class="fas fa-boxes-stacked"></i>
+                    </div>
+                    <span class="service-title">Transloading &amp; Cross-dock</span>
+                    <div class="service-description">
+                        Fast-turn cross-dock and short-term storage via partner facilities.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="body">
+                    <div class="service-icon">
+                        <i class="fas fa-weight-hanging"></i>
+                    </div>
+                    <span class="service-title">Heavy &amp; Overweight</span>
+                    <div class="service-description">
+                        Tri-axle chassis as needed for heavy loads up to 52,000 lbs.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="body">
+                    <div class="service-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <span class="service-title">Yard Parking (Eastvale, CA)</span>
+                    <div class="service-description">
+                        Month-to-month truck &amp; trailer parking; customer container parking. Gated access, cameras, and lighting.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="body">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <span class="service-title">24/7 Dispatch &amp; Tracking</span>
+                    <div class="service-description">
+                        Proactive updates with geo-stamped milestones. After-hours support available.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="body">
+                    <div class="service-icon">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <span class="service-title">Reefer Container Transport</span>
+                    <div class="service-description">
+                        Specialized reefer container moves. Nose-mount gensets and plug-ins available.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
 
 <!-- COVERAGE -->
 <section id="coverage" class="section">
@@ -554,7 +605,7 @@ DOT &amp; Insurance info available on request. © 2025 Landjet Intermodal LLC. A
 </div>
 </div>
 </footer>
-<script src="app.js"></script>
+<script src="/js/app.js"></script>
 </body>
 </html>
 

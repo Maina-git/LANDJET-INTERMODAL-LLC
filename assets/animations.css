@@ -23,8 +23,6 @@
 /* Button animations  */
 
 
-
-
 @keyframes fadeln{
   from {
     opacity:0;
@@ -35,6 +33,10 @@
     transform:translateY(0);
   }
 }
+
+
+
+
 /* Focus state for Accessibility */
 .btn:focus,
 btn:focus,
