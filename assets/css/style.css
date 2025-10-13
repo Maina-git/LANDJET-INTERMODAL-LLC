@@ -1,13 +1,110 @@
 /* Base HTML & Body Styles */
- body {
+/*
+html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-main, footer.footer { position: relative; z-index: 1; }
+body{
+  position:relative;
+  width:100vw;
+  overflow-x:hidden;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+  background-attachment: fixed;
+}
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:url("assets/logo.png");
+  background-repeat:no-repeat;
+  background-position:center 10%;
+  background-size:31vmin;
+  opacity:0.06;
+  pointer-events:none;
+  z-index:0;
+  filter:grayscale(100%) brightness(1.2);
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+     radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+     radial-gradient(circle at 80% 50%, rgba(14, 165, 233, 0.03) 0%, transparent 50%);
+pointer-events:none;
+z-index:0;
+animation:subtleShift 15s ease-in-out infinite alternate;
+}
+
+@keyframes subtleShift{
+  0%{
+    opacity:0.5;
+    transform:scale(1);
+  }
+  100%{
+    opacity:0.8;
+    transform:scale(1.05);
+  }
+}
+body > *{
+  position:relative;
+  z-index:1;
+}
+@media(max-width:1024px){
+  before::before{
+    background-size:35vmin;
+    background-position:center 12%;
+    opacity:0.05;
+  }
+}
+@media(max-width:768px){
+  body{
+    background:white;
+  }
+  body::before{
+    display:none;
+  }
+  body::after{
+    display:none;
+  }
+}
+
+@media (max-width:480px){
+  body{
+    background:white;
+  }
+  body::before{
+    display:none;
+  }
+  body::after{
+    display:none;
+  }
+}
+
+@supports (backdrop-filter:blur(0px)){
+  @media (min-width:769px){
+    body::before{
+      backdrop-filter:blur(0.5px);
+    }
+  }
+}
+@media(prefers-color-scheme: dark) and (min-width: 769px){
+  body{
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  }
+  body:after{
+    background:
+         radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+         radial-gradient(circle at 80% 50%, rgba(14, 165, 233, 0.05) 0%, transparent 50%);
+  }
+}
+*/
+/*main, footer.footer { position: relative; z-index: 1; }*/
 
 /* Dark mode support (optional) */
+/*
 @media (prefers-color-scheme: dark) {
   body {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
@@ -24,6 +121,7 @@ main, footer.footer { position: relative; z-index: 1; }
       radial-gradient(circle at 80% 50%, rgba(14, 165, 233, 0.05) 0%, transparent 50%);
   }
 }
+*/
 /* start of the header section */
 .header{
     position:fixed;

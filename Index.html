@@ -26,7 +26,7 @@ body {
   position: relative;
   width: 100vw;
   overflow-x: hidden;
-  background: none;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
   background-attachment: fixed;
 }
 /* Enhanced Watermark Background */
@@ -72,6 +72,7 @@ body > * {
   position: relative;
   z-index: 1;
 }
+
 /* Responsive Watermark Size */
 @media (max-width: 1024px) {
   body::before {
@@ -80,33 +81,46 @@ body > * {
     opacity: 0.05;
   }
 }
+/* Tablets - Remove watermark, white background */
 @media (max-width: 768px) {
-  body::before {
-    background-size: 40vmin;
-    background-position: center 15%;
-    opacity: 0.04;
+  body {
+    background: white;
   }
-}
-@media (max-width: 480px) {
+
   body::before {
-    background-size: 50vmin;
-    background-position: center 20%;
-    opacity: 0.03;
-  } 
+    display: none;
+  }
+
   body::after {
-    animation: none;
-    opacity: 0.6;
+    display: none;
   }
 }
-/* Optional: Add texture overlay for premium feel */
-@supports (backdrop-filter: blur(0px)) {
+/* Mobile - White background, no watermark */
+@media (max-width: 480px) {
+  body {
+    background: white;
+  }
+
   body::before {
-    backdrop-filter: blur(0.5px);
+    display: none;
+  }
+  
+  body::after {
+    display: none;
   }
 }
 
-/* Dark mode support (optional) */
-@media (prefers-color-scheme: dark) {
+/* Optional: Add texture overlay for premium feel (Desktop only) */
+@supports (backdrop-filter: blur(0px)) {
+  @media (min-width: 769px) {
+    body::before {
+      backdrop-filter: blur(0.5px);
+    }
+  }
+}
+
+/* Dark mode support (optional) - Desktop only */
+@media (prefers-color-scheme: dark) and (min-width: 769px) {
   body {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
   }
@@ -580,7 +594,7 @@ DOT &amp; Insurance info available on request. © 2025 Landjet Intermodal LLC. A
 </div>
 </div>
 </footer>
-<script src="/js/app.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
 
