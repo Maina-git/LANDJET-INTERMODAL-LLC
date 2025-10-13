@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Landjet Intermodal LLC – Port Drayage in Southern California</title>
@@ -13,18 +12,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="assets/style.css"/>
- <link rel="stylesheet" href="assets/responsive.css"> 
- <link rel="stylesheet" href="assets/animations.css">
+<link rel="stylesheet" href="assets/css/style.css"/>
+ <link rel="stylesheet" href="assets/css/responsive.css"> 
+ <link rel="stylesheet" href="assets/css/animations.css">
 <style>
-
 /* Base HTML & Body Styles */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
-
 body {
   position: relative;
   width: 100vw;
@@ -32,7 +29,6 @@ body {
   background: none;
   background-attachment: fixed;
 }
-
 /* Enhanced Watermark Background */
 body::before {
   content: "";
@@ -48,7 +44,6 @@ body::before {
   filter: grayscale(100%) brightness(1.2);
   mix-blend-mode: multiply;
 }
-
 /* Subtle Animated Gradient Overlay */
 body::after {
   content: "";
@@ -72,13 +67,11 @@ body::after {
     transform: scale(1.05);
   }
 }
-
 /* Ensure Content Sits Above Background */
 body > * {
   position: relative;
   z-index: 1;
 }
-
 /* Responsive Watermark Size */
 @media (max-width: 1024px) {
   body::before {
@@ -87,7 +80,6 @@ body > * {
     opacity: 0.05;
   }
 }
-
 @media (max-width: 768px) {
   body::before {
     background-size: 40vmin;
@@ -95,20 +87,17 @@ body > * {
     opacity: 0.04;
   }
 }
-
 @media (max-width: 480px) {
   body::before {
     background-size: 50vmin;
     background-position: center 20%;
     opacity: 0.03;
-  }
-  
+  } 
   body::after {
     animation: none;
     opacity: 0.6;
   }
 }
-
 /* Optional: Add texture overlay for premium feel */
 @supports (backdrop-filter: blur(0px)) {
   body::before {
@@ -133,19 +122,6 @@ body > * {
       radial-gradient(circle at 80% 50%, rgba(14, 165, 233, 0.05) 0%, transparent 50%);
   }
 }
-/* Form polish */
-/*
-textarea[name="notes"] { resize: none; min-height: 110px; }
-.btn[disabled] { opacity: .6; cursor: not-allowed; }
-*/
-	/* --- Semi-transparent background logo across body --- */
-/*
-@media (max-width: 640px) {
-body::before { background-size: 90vmin; background-position: center 35%; opacity: 0.06; }
-}
-*/
-/* Temporary tweak to push Fast Quote lower */
-/* Flip button (Call to Reserve) */
 </style>
 </head>
 <body>
@@ -181,7 +157,6 @@ body::before { background-size: 90vmin; background-position: center 35%; opacity
 </div>
 </div>
 </header>
-
 <!-- === Easter egg modal markup (added) === -->
 <div id="eggOverlay" class="egg-overlay" role="dialog" aria-modal="true" aria-labelledby="eggTitle" aria-hidden="true">
 <div class="egg-modal ticket">

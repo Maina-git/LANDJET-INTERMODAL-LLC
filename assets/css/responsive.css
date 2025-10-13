@@ -684,6 +684,28 @@
         font-size:0.9rem;
     }
 }
+
+/* Responsive Map page */
+@media (max-width:768px){
+    .map{
+        margin:50px auto;
+        padding:0 24px;
+    }
+    .map h2{
+        font-size:28px;
+        margin-bottom:20px;
+    }
+}
+@media (max-width:480px){
+    .map{
+        margin:40px auto;
+        padding: 0 16px;
+    }
+    .map h2{
+        font-size:24px;
+        margin-bottom:16px;
+    }
+}
 /* Responsive Get  in touch page */
 @media (max-width:768px){
     .get-in-touch{
