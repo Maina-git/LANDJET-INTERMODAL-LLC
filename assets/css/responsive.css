@@ -29,6 +29,9 @@
 }
 
 @media (max-width: 768px) {
+    .header{
+        height:auto;
+    }
     .header .container.nav {
         padding: 0.75rem 1rem;
         flex-wrap: wrap;
@@ -41,15 +44,12 @@
         order: 1;
         flex: 1;
     }
-
     .header .container.nav .brand .text-logo {
         font-size: 1rem;
     }
-
     .header .container.nav .brand .subtext-logo {
         font-size: 0.65rem;
     }
-
     .header .container.nav .brand .logo-egg img {
         height: 60px !important;
         width: 60px !important;
@@ -65,7 +65,6 @@
         padding: 1rem 0;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-
     .header .container.nav .navlinks.active {
         display: flex;
     }
@@ -124,6 +123,176 @@
     }
 }
 
+/* === Responsive Hero section */
+
+@media(max-width:968px){
+    .hero{
+        min-height:auto;
+        padding:100px 20px 70px;
+    }
+    .hero-content{
+        max-width:700px;
+        padding:16px;
+    }
+    .icon{
+        width:100px;
+    }
+    .hero-content h1{
+        font-size:2.5rem;
+    }
+    .hero-content p{
+        font-size:1rem;
+    }
+    .stats{
+        gap:32px;
+        margin-top:2rem;
+    }
+    .stat .val{
+        font-size:1.6rem;
+    }
+}
+@media (max-width:768px){
+    .hero{
+       min-height:auto;
+       padding:90px 20px 60px;
+       background:white;
+    }
+    .hero-content{
+        max-width:100%;
+        padding:16px;
+    }
+    .hero-content > div[style*="margin-bottom:50px"]{
+        margin-bottom:30px;
+    }
+    .badge{
+        font-size:0.85rem;
+        padding:7px 14px;
+        margin-bottom:14px;
+    }
+    .icon{
+        width:90px;
+    }
+    .icon-content{
+        margin-bottom:16px;
+    }
+    .hero-content h1{
+        font-size:2.2rem;
+        margin-bottom:0.875rem;
+    }
+    .hero-content p{
+        font-size:0.95rem;
+        margin-bottom:1.25rem;
+    }
+    .hero-content .btn{
+        padding:12px 24px;
+        font-size:0.9rem;
+    }
+    .stats{
+        gap:28px;
+        margin-top:1.75rem;
+    }
+    .stat{
+        min-width:100px;
+    }
+    .stat .val{
+        font-size:1.4rem;
+        margin-bottom:4px;
+    }
+    .dots{
+        bottom:20px;
+        gap:10px;
+    }
+    .dot{
+        width:40px;
+        gap:10px;
+    }
+}
+@media (max-width:480px){
+    .hero{
+        padding:80px 16px 50px;
+        background:white;
+    }
+    .hero-content{
+        padding:12px;
+    }
+    .hero-content > div[style*="margin-bottom:50px"]{
+        margin-bottom:20px;
+    }
+    .badge{
+        font-size:0.8rem;
+        padding:6px 12px;
+        margin-bottom:12px;
+    }
+    .icon{
+        width:80px;
+    }
+    .icon-content{
+        margin-bottom:14px;
+    }
+    .text-area{
+        margin-bottom:16px;
+    }
+    .hero-content h1{
+        font-size:1.75rem;
+        margin-bottom:0.75rem;
+    }
+    .hero-content p{
+        font-size:0.9rem;
+        margin-bottom:1rem;
+        line-height:1.6;
+    }
+    .hero-content > div[style*="display:flex"]{
+        gap:10px;
+        margin:16px 0 0;
+        flex-direction:column;
+    }
+    .hero-content .btn{
+        padding:12px 24px;
+        font-size:0.85rem;
+        width:100%;
+        max-width:100%;
+        max-width:320px;
+    }
+    .stats{
+        gap:24px;
+        font-size:0.85rem;
+        margin-top:1.5rem;
+    }
+    .stat{
+        min-width:90px;
+    }
+    .stat .val{
+        font-size:1.3rem;
+    }
+    .dots{
+        bottom:16px;
+        gap:8px;
+    }
+    .dot{
+        width:35px;
+        height:2px;
+    }
+}
+@media (max-width:360px){
+    .hero-content h1{
+        font-size:1.5rem;
+    }
+    .hero-content p{
+        font-size:0.85rem;
+    }
+    .icon{
+        width:70px;
+    }
+    .stats{
+        flex-direction:column;
+        gap:16px;
+        align-items:center;
+    }
+    .stat{
+        min-width:auto;
+    }
+}
+
 /* Fast Quote Respomsive designs */
 @media (max-width:1200px){
     #fast-quote .body{
@@ -134,7 +303,6 @@
         font-size:34px;
     }
 }
-
 @media (max-width: 992px){
     #fast-quote{
         padding:40px 20px;
@@ -160,9 +328,9 @@
     width:100%;
 }
 }
-
 @media (max-width:768px){
     #fast-quote{
+        width:100%;
         padding:30px 15px;
     }
     #fast-quote .title{
@@ -170,7 +338,7 @@
         margin-bottom:24px;
     }
     #fast-quote .body{
-        width:100%;
+        width:80%;
         padding:16px;
         border-radius:12px;
     }
@@ -206,9 +374,13 @@
 }
 /*  Responsive Design Instagram*/
 @media (max-width:768px){
+    #instagram{
+        width:100%;
+    }
 #instagram .title{
     padding:16px 20px;
     gap:10px;
+    width:auto;
 }
 #instagram .title a{
     font-size:16px;
@@ -219,12 +391,17 @@
 }
 #instagram .ig-embed iframe{
     height:450px;
+    width:100%;
 }
 }
 @media (max-width:480px){
+    #instagram{
+        width:100%;
+    }
     #instagram .title{
         padding:14px 16px;
         gap:8px;
+        width:100%;
     }
     #instagram .title a{
         font-size:15px;
@@ -242,6 +419,10 @@
 /* ====== Responive PortPro ======= */
 
 @media (max-width:968px){
+   .cardport-pro{
+    width:100%;
+   }
+
     .cardport-pro .grid{
         grid-template-columns: 1fr;
     }
@@ -251,10 +432,13 @@
         padding:24px;
     }
     .cardport-pro .title{
-        font-size:32px;
+        font-size:20px;
     }
 }
 @media(max-width:480px){
+    .cardport-pro{
+        width:100%;
+    }
     .cardport-pro .grid > div:first-child{
         padding:24px;
     }
@@ -273,6 +457,12 @@
         padding:20px;
     }
 }
+
+
+
+
+
+
 
 
 /* Respomsive design for the Services */
