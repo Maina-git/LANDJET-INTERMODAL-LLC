@@ -124,15 +124,14 @@
 }
 
 /* === Responsive Hero section */
-
 @media(max-width:968px){
     .hero{
         min-height:auto;
-        padding:100px 20px 70px;
+        padding:0;
     }
     .hero-content{
         max-width:700px;
-        padding:16px;
+        padding:10px;
     }
     .icon{
         width:100px;
@@ -154,7 +153,7 @@
 @media (max-width:768px){
     .hero{
        min-height:auto;
-       padding:90px 20px 60px;
+       padding-top:30px;
        background:white;
     }
     .hero-content{
@@ -293,85 +292,75 @@
     }
 }
 
-/* Fast Quote Respomsive designs */
-@media (max-width:1200px){
-    #fast-quote .body{
-        right:150px;
-        width:500px;
-    }
-    #fast-quote .title{
-        font-size:34px;
-    }
-}
-@media (max-width: 992px){
-    #fast-quote{
-        padding:40px 20px;
-        height: auto;
-    }
-#fast-quote .body{
-    position:relative;
-    right:auto;
-    top:auto;
-    width:90%;
-    margin:0 auto;
-}
-#fast-quote .title{
-    text-align:center;
-    font-size:32px;
-    margin-bottom:30px;
-}
-#fastQuoteForm .row{
-    flex-direction:column;
-    gap:10px;
-}
-#fastQuoteSubmit{
-    width:100%;
-}
-}
-@media (max-width:768px){
-    #fast-quote{
-        width:100%;
-        padding:30px 15px;
-    }
-    #fast-quote .title{
-        font-size:26px;
-        margin-bottom:24px;
-    }
-    #fast-quote .body{
-        width:80%;
-        padding:16px;
-        border-radius:12px;
-    }
-   #fastQuoteForm input,
-   #fastQuoteForm select,
-   #fastQuoteForm textarea{
-    font-size:14px;
-    padding:10px 14px;
-   }
-   #fastQuoteSubmit{
-    font-size:15px;
-    padding:14px 18px;
-   }
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large tablets and below */
+@media (max-width: 1200px) {
+  .fast-quote-hero {
+    padding: 0 24px;
+  }
+
+  .fast-quote-hero .card {
+    grid-template-columns: 1fr;
+  }
+
+  .fast-quote-hero .card .title {
+    font-size: 24px;
+    padding: 28px 20px;
+  }
+
+  .fast-quote-hero .card .body {
+    padding: 28px 24px;
+  }
+
+  .fast-quote-hero .row.cols-2 {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width:480px){
-    #fast-quote .title{
-        font-size:22px;
-    }
-    #fast-quote .body{
-        padding:12px;
-        width:100%;
-    }
-    #fastQuoteForm input,
-    #fastQuoteForm select,
-    #fastQuoteForm textarea{
-        font-size:13px;
-    }
-    #fastQuoteSubmit{
-        font-size:14px;
-        padding:12px 16px;
-    }
+/* Tablets */
+@media (max-width: 900px) {
+  .fast-quote-hero {
+    margin: 60px auto;
+  }
+  .fast-quote-hero .card {
+    max-width: 100%;
+  }
+  .fast-quote-hero .card .title {
+    font-size: 22px;
+  }
+  .fast-quote-hero .btn {
+    font-size: 14px;
+  }
 }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .fast-quote-hero {
+    padding: 0 16px;
+    margin: 50px auto;
+  }
+  .fast-quote-hero .card .title {
+    font-size: 20px;
+    padding: 20px;
+  }
+  .fast-quote-hero .card .body {
+    padding: 20px;
+  }
+
+  .fast-quote-hero input,
+  .fast-quote-hero select,
+  .fast-quote-hero textarea {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .fast-quote-hero .btn {
+    font-size: 14px;
+    padding: 11px 16px;
+  }
+}
+
 /*  Responsive Design Instagram*/
 @media (max-width:768px){
     #instagram{
@@ -416,54 +405,108 @@
     }
 }
 
-/* ====== Responive PortPro ======= */
+/* ====== Responive PortPro ==== Responsive Adjustments ===== */
 
-@media (max-width:968px){
-   .cardport-pro{
-    width:100%;
-   }
+/* Large tablets and below */
+@media (max-width: 1200px) {
+  .cardport-pro {
+    width: 100%;
+  }
 
-    .cardport-pro .grid{
-        grid-template-columns: 1fr;
-    }
-    .cardport-pro .grid > div:last-child{
-        border-left:none;
-        border-top:1px solid #e2e8f0;
-        padding:24px;
-    }
-    .cardport-pro .title{
-        font-size:20px;
-    }
-}
-@media(max-width:480px){
-    .cardport-pro{
-        width:100%;
-    }
-    .cardport-pro .grid > div:first-child{
-        padding:24px;
-    }
-    .cardport-pro .title{
-        font-size:20px;
-        padding:18px 24px;
-    }
-    .cardport-pro .body p:first-child{
-        font-size:15px;
-    }
-    .btn-pro{
-        width: 100%;
-        justify-content:center;
-    }
-    .cardport-pro .grid > div:last-child{
-        padding:20px;
-    }
+  .port-pro-hero {
+    width: 90%;
+  }
+
+  .cardport-pro .port-pro-hero .grid {
+    grid-template-columns: 1fr;
+    border-left: none;
+  }
+
+  .cardport-pro .port-pro-hero .grid > div:last-child {
+    border-left: none;
+    padding: 10px 0;
+  }
+
+  .portpro-image {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
+/* Tablets and small laptops */
+@media (max-width: 900px) {
+  .cardport-pro {
+    width: 100%;
+    border-radius: 0;
+  }
 
+  .port-pro-hero {
+    width: 92%;
+  }
 
+  .cardport-pro .port-pro-hero .title {
+    font-size: 26px;
+    text-align: center;
+    padding: 16px;
+  }
 
+  .cardport-pro .port-pro-hero .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    text-align: center;
+  }
 
+  .cardport-pro .port-pro-hero .grid > div:first-child {
+    padding: 20px;
+  }
 
+  .cardport-pro .port-pro-hero .grid > div:last-child {
+    border-left: none;
+    justify-content: center;
+    padding: 10px;
+  }
 
+  .btn-pro,
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cardport-pro .body p {
+    text-align: left;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+  .port-pro-hero {
+    width: 94%;
+  }
+  .cardport-pro .port-pro-hero .title {
+    font-size: 22px;
+    text-align: center;
+  }
+  .portpro-image {
+    width: 100%;
+  }
+  .btn-pro,
+  .btn-outline {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+  .cardport-pro .body p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .cardport-pro .body p[style*="font-size:12px"],
+  .cardport-pro .body p[style*="font-size:14px"] {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  .cardport-pro .port-pro-hero .grid > div:first-child {
+    padding: 15px;
+  }
+}
 
 /* Respomsive design for the Services */
 @media (max-width:1024px){
@@ -599,46 +642,100 @@
     padding: 16px;
   }
 }
+/* ===== Responsive Adjustments for Coverage Section ===== */
 
-/* Responsive code ==== COVERAGE ==== */
-@media (max-width:768px){
-    #coverage {
-        padding: 40px 0;
-    }
-    #coverage h2{
-        font-size:24px;
-    }
-    #coverage> .container > p{
-        font-size:15px;
-    }
-    #coverage .card .body{
-        padding:18px;
-        font-size:14px;
-    }
+/* Large tablets and smaller (<=1200px) */
+@media (max-width: 1200px) {
+  #coverage {
+    width: 100%;
+    padding: 50px 40px;
+  }
+
+  #coverage .container {
+    max-width: 95%;
+    padding: 0 20px;
+  }
+
+  #coverage .grid.lanes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  #coverage h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  #coverage > .container > p {
+    text-align: center;
+    font-size: 15px;
+  }
 }
-/* Mobile */
-@media(max-width:480px){
-    #coverage{
-        padding:32px 0;
-    }
-    #coverage .container{
-        padding:0 16px;
-    }
-    #coverage h2{
-        font-size:22px;
-    }
-    #coverage> .container>p{
-        font-size:14px;
-    }
-    #coverage .grid.lanes{
-        gap:10px;
-        margin-top:16px;
-        grid-template-columns: 1fr;
-    }
-    #coverage .card .body{
-        padding:16px;
-    }
+
+/* Tablets and small laptops (<=900px) */
+@media (max-width: 900px) {
+  #coverage {
+    padding: 40px 30px;
+  }
+
+  #coverage .grid.lanes {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #coverage h2 {
+    font-size: 24px;
+  }
+
+  #coverage > .container > p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  #coverage .card .body {
+    font-size: 14px;
+    padding: 18px;
+  }
 }
+
+/* Mobile screens (<=600px) */
+@media (max-width: 600px) {
+  #coverage {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  #coverage .container {
+    width: 100%;
+    padding: 0;
+  }
+
+  #coverage h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  #coverage > .container > p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  #coverage .grid.lanes {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  #coverage .card {
+    border-radius: 10px;
+  }
+
+  #coverage .card .body {
+    font-size: 14px;
+    padding: 16px;
+  }
+}
+
+
 /* fleet responsive animations */
 @media (max-width:768px){
     #fleet{
@@ -678,90 +775,140 @@
         padding:16px 18px;
     }
 }
-/* Parking Responsiveness */
-@media (max-width:768px){
-    #parking{
-        padding:40px 0;
-    }
-    #parking .container{
-        padding:0 24px;
-    }
-    .parking-hero{
-        grid-template-columns:1fr;
-        gap:28px;
-    }
-    #parking h2{
-        font-size:24px;
-    }
-    #parking p{
-        font-size:15px;
-    }
-    #parking div[style*="display:flex"]{
-        margin-top:14px;
-    }
-    .flip-btn{
-        width:48%;
-        min-width:170px;
-    }
-    .btn-outline{
-        flex:1;
-        min-width:200px;
-    }
-    #parking .card .title{
-        font-size:17px;
-        padding:14px 16px;
-    }
-    #parking .card .body{
-        padding:18px;
-        font-size:14px;
-    }
-}
-@media(max-width:480px){
-    #parking{
-        padding:32px 0;
-    }
-    #parking .container{
-        padding:0 16px;
-    }
-    .parking-hero {
-        gap:24px;
-    }
-    #parking h2{
-        font-size:22px;
-    }
-    #parking p{
-        font-size:14px;
-    }
-    #parking div[style*="display:flex"]{
-        margin-top:12px;
-        flex-direction:column;
-    }
-    .flip-btn{
-        width:100%;
-        min-width:unset;
-    }
-    .btn-outline{
-        width:100%;
-        min-width:unset;
-        justify-content:center;
-    }
-    .flip-btn-front,
-    .flip-btn-back{
-        font-size:14px;
-    }
-    .flip-btn-back a{
-        font-size:14px;
-    }
-    #parking .card .title{
-        font-size:16px;
-        padding:14px 16px;
-    }
-    #parking .card .body{
-        padding:16px;
-        font-size:14px;
-        line-height:1.8;
-    }
 
+/* ===== Responsive Adjustments for Parking Section ===== */
+
+/* Large tablets and smaller (<=1200px) */
+@media (max-width: 1200px) {
+  #parking {
+    width: 100%;
+    padding: 50px 0;
+  }
+  #parking .container {
+    max-width: 95%;
+    padding: 0 20px;
+  }
+  .parking-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .parking-hero > div:first-child {
+    text-align: center;
+    align-items: center;
+  }
+  #parking h2 {
+    font-size: 26px;
+  }
+  #parking p {
+    font-size: 15px;
+    max-width: 700px;
+  }
+  .flip-btn {
+    margin: 0 auto;
+  }
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* Tablets and small laptops (<=900px) */
+@media (max-width: 900px) {
+  #parking {
+    padding: 40px 0;
+  }
+  #parking h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+  #parking p {
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .parking-hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  #parking .card {
+    width: 100%;
+    margin: 0 auto;
+  }
+  #parking .card .title {
+    font-size: 17px;
+    text-align: center;
+  }
+
+  #parking .card .body {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  #parking div[style*="display:flex"] {
+    justify-content: center;
+  }
+
+  .flip-btn {
+    width: 160px;
+    height: 48px;
+  }
+}
+
+/* Mobile screens (<=600px) */
+@media (max-width: 600px) {
+  #parking {
+    width: 100%;
+    padding: 30px 0;
+  }
+
+  #parking .container {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  #parking h2 {
+    font-size: 22px;
+    text-align: center;
+  }
+
+  #parking p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .parking-hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .flip-btn {
+    width: 150px;
+    height: 46px;
+  }
+
+  .flip-btn-front,
+  .flip-btn-back {
+    font-size: 14px;
+  }
+
+  .btn-outline {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  #parking .card {
+    margin: 0 auto;
+  }
+
+  #parking .card .title {
+    font-size: 16px;
+  }
+
+  #parking .card .body {
+    font-size: 14px;
+    padding: 16px;
+  }
 }
 
 /* Responsive Contact page */

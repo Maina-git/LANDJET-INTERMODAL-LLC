@@ -18,12 +18,14 @@
 <link rel="stylesheet" href="assets/css/style.css"/>
 <link rel="stylesheet" href="assets/css/responsive.css">
 <link rel="stylesheet" href="assets/css/animations.css">
+<link rel="stylesheet" href="assets/css/graphics.css">
 <style>
 /* Base HTML & Body Styles */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+
 }
 body {
   position: relative;
@@ -121,7 +123,6 @@ body > * {
     }
   }
 }
-
 /* Dark mode support (optional) - Desktop only */
 @media (prefers-color-scheme: dark) and (min-width: 769px) {
   body {
@@ -177,9 +178,6 @@ body > * {
 </div>
 </header>
 
-
-
-
 <!-- === Easter egg modal markup (added) === -->
 <div id="eggOverlay" class="egg-overlay" role="dialog" aria-modal="true" aria-labelledby="eggTitle" aria-hidden="true">
 <div class="egg-modal ticket">
@@ -229,10 +227,83 @@ At Landjet Intermodal, our leadership team brings together real-world experience
 Whether you need import/export container drayage, yard storage, or regional trucking solutions, Landjet Intermodal LLC is your trusted logistics partner in Southern California—driven by experience, powered by reliability.      </p>  
     </div>
    <!-- Map section  Our accessiblity -->
-    <div class="map">
-        <h2>Our Accesibility</h2>
-        <img src="assets/Screenshot 2025-10-07 151848.png" alt="">
+  
+   <div class="map">
+<div class="map-wrapper">
+    <!-- Zoom Controls -->
+    <div class="zoom-controls">
+      <button id="zoomIn">+</button>
+      <button id="zoomOut">−</button>
     </div>
+
+    <!-- Map -->
+    <div class="map-container" id="mapContainer">
+      <img src="assets/map-base.png" alt="Service Area Map" class="map-image" />
+
+      <!-- SVG Overlay -->
+      <svg class="map-overlay" viewBox="0 0 1200 800">
+        <polygon id="los-angeles" 
+          points="200,600 400,400 600,420 550,650"
+          fill="rgba(255, 215, 0, 0.3)"
+          stroke="#FFD700"
+          stroke-width="3"
+          stroke-linejoin="round"
+          style="cursor:pointer" />
+          
+        <polygon id="san-diego" 
+          points="700,650 950,600 1000,700 800,750"
+          fill="rgba(0,150,255,0.3)"
+          stroke="#0096FF"
+          stroke-width="3"
+          stroke-linejoin="round"
+          style="cursor:pointer" />
+          
+        <polygon id="palm-springs" 
+          points="850,400 1050,420 1080,520 900,520"
+          fill="rgba(0,255,150,0.3)"
+          stroke="#00C781"
+          stroke-width="3"
+          stroke-linejoin="round"
+          style="cursor:pointer" />
+      </svg>
+
+      <!-- Animated Pins -->
+      <div class="pin" style="top:50%; left:40%;" data-area="los-angeles"></div>
+      <div class="pin" style="top:70%; left:75%;" data-area="san-diego"></div>
+      <div class="pin" style="top:52%; left:82%;" data-area="palm-springs"></div>
+
+      <!-- Label -->
+      <div class="map-label">Our Southern California Coverage</div>
+
+      <!-- Popup Info Box -->
+      <div class="info-box" id="infoBox">
+        <h3 id="infoTitle"></h3>
+        <p id="infoText"></p>
+        <button id="closeBtn">Close</button>
+      </div>
+
+      <!-- Side Panel -->
+      <div class="side-panel" id="sidePanel">
+        <div class="panel-header">
+          <h3>Region Details</h3>
+          <button id="closePanelBtn" class="close-panel">×</button>
+        </div>
+        <p id="panelText">Click a region or pin to learn more.</p>
+      </div>
+
+      <!-- Legend -->
+      <div class="map-legend">
+        <div><span class="color-box gold"></span> Los Angeles Area</div>
+        <div><span class="color-box blue"></span> San Diego Area</div>
+        <div><span class="color-box green"></span> Palm Springs Area</div>
+      </div>
+    </div>
+  </div>
+      </div>
+
+
+
+
     <div class="get-in-touch">
     <div class="container">
       <h2>Get in Touch</h2>

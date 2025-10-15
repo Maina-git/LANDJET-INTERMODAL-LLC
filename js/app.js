@@ -1,66 +1,65 @@
-/* Variables */
 const hero = document.getElementById('hero');
+const heroContent = document.querySelector('.hero-content');
 const textArea = document.getElementById('text-area');
 const dots = document.querySelectorAll('.dot');
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const navlinks = document.querySelector('.header .container.nav  .navlinks');
-const cta = document.querySelector(".header .container.nav .cta");
+const cta = document.querySelector('.header .container.nav .cta'); 
 
 
-const backgrounds = [
-  "transparent", // slide 1
-  "transparent", // slide 2
-  "transparent"  // slide 3
+const backgroundImages = [
+  "url('assets/home/port-1845350_1280.jpg')",
+  "url('assets/home/canada-784392_1280.jpg')",
+  "url('assets/home/truck-4349523_1280.jpg')"
 ];
 
 let current = 0;
 let intervalId = null;
 let isAnimating = false;
 
-function setSlide(index, direction) {
-
-  if (isAnimating) return;
+function setSlide(index, direction){
+  if(isAnimating) return;
   isAnimating = true;
-  if (direction === 'right') {
-    hero.classList.add('swipe-right');
-    textArea.classList.add('hide-right');
-  } else {
-    hero.classList.add('swipe-left');
-    textArea.classList.add('hide-left');
-  }
 
-  setTimeout(() => {
-    hero.style.background = backgrounds[index];
-    dots.forEach(d => d.classList.remove('active'));
-    dots[index].classList.add('active');
-  }, 600);
+ if(direction === "right"){
+  hero.classList.add('swipe-right');
+  textArea.classList.add('hide-right');
+ }else{
+  hero.classList.add('swipe-left');
+  textArea.classList.add('hide-left');
+ }
 
-  setTimeout(() => {
-    textArea.classList.remove('hide-right', 'hide-left');
-    textArea.classList.add('show');
-  }, 1200);
+setTimeout(()=>{
+  heroContent.style.backgroundImage = backgroundImages[index];
+  dots.forEach(d=>d.classList.remove('active'));
+  dots[index].classList.add('active');
+}, 600);
 
-  setTimeout(() => {
-    hero.classList.remove('swipe-right', 'swipe-left');
-    textArea.classList.remove('show');
-    isAnimating = false;
-  }, 2000);
+setTimeout(()=>{
+  textArea.classList.remove('hide-right', 'hide-left');
+  textArea.classList.add('show');
+}, 1200);
+
+setTimeout(()=>{
+  hero.classList.remove('swipe-right', 'swipe-left');
+  textArea.classList.remove('show');
+  isAnimating = false;
+}, 2000);
 }
 
-function nextSlide() {
-  current = (current + 1) % backgrounds.length;
+function nextSlide(){
+  current = (current + 1) % backgroundImages.length;
   setSlide(current, 'right');
 }
 
-function startAutoSwipe() {
+function startAutoSwipe(){
   stopAutoSwipe();
-  intervalId = setInterval(() => {
+  intervalId = setInterval(()=>{
     nextSlide();
   }, 6000);
 }
 
-function stopAutoSwipe() {
-  if (intervalId) {
+function stopAutoSwipe(){
+  if(intervalId){
     clearInterval(intervalId);
     intervalId = null;
   }
@@ -69,25 +68,23 @@ function stopAutoSwipe() {
 hero.addEventListener('mouseenter', stopAutoSwipe);
 hero.addEventListener('mouseleave', startAutoSwipe);
 
-document.addEventListener('visibilitychange', () => {
-  if (document.hidden) {
+document.addEventListener('visibilitychange', ()=>{
+  if(document.hidden){
     stopAutoSwipe();
-  } else {
+  }else{
     startAutoSwipe();
   }
 });
-
-hero.style.background = backgrounds[0];
+heroContent.style.backgroundImage = backgroundImages[0];
 dots[0].classList.add('active');
-startAutoSwipe();
 
-/*  Mobile Toggle Menu */
+//Toggler
+const navlinks = document.querySelector('.header .container.nav  .navlinks');
+
 if(mobileMenuToggle){
   mobileMenuToggle.addEventListener("click", ()=>{
     navlinks.classList.toggle("active");
     cta.classList.toggle('active');
-  
-  
   const icon = mobileMenuToggle.querySelector('i');
   if(icon){
     if(navlinks.classList.contains('active')){
@@ -126,6 +123,7 @@ document.addEventListener("click", (e)=>{
     }
   }
 });
+
 
 // Fast Quote: show thank-you and clear fields after posting to hidden iframe
 (function(){

@@ -1,9 +1,6 @@
-/* Variables */
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navlinks = document.querySelector('.header .container.nav  .navlinks');
 const cta = document.querySelector(".header .container.nav .cta");
-
-
 
 if(mobileMenuToggle){
   mobileMenuToggle.addEventListener("click", ()=>{
@@ -133,4 +130,136 @@ canvas.width = Math.floor(window.innerWidth * DPR);
 canvas.height = Math.floor(window.innerHeight * DPR);
 });
 })();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const areas = {
+    "los-angeles": {
+      title: "Los Angeles Area",
+      text: "We cover the entire Los Angeles metropolitan area, including Santa Monica and Long Beach."
+    },
+    "san-diego": {
+      title: "San Diego Area",
+      text: "Our San Diego office serves the coastal and inland regions with fast delivery options."
+    },
+    "palm-springs": {
+      title: "Palm Springs Area",
+      text: "Our Palm Springs coverage includes the desert cities and surrounding communities."
+    }
+  };
+
+  const infoBox = document.getElementById('infoBox');
+  const infoTitle = document.getElementById('infoTitle');
+  const infoText = document.getElementById('infoText');
+  const closeBtn = document.getElementById('closeBtn');
+  const sidePanel = document.getElementById('sidePanel');
+  const panelText = document.getElementById('panelText');
+  const closePanelBtn = document.getElementById('closePanelBtn');
+  const mapContainer = document.getElementById('mapContainer');
+
+  function showInfo(id) {
+    const data = areas[id];
+    if (!data) return;
+
+    infoTitle.textContent = data.title;
+    infoText.textContent = data.text;
+    infoBox.classList.add('active');
+    sidePanel.classList.add('active');
+    panelText.textContent = data.text;
+  }
+
+  closeBtn.addEventListener('click', () => {
+    infoBox.classList.remove('active');
+  });
+
+
+  closePanelBtn.addEventListener('click', () => {
+    sidePanel.classList.remove('active');
+  });
+
+
+  Object.keys(areas).forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('click', () => showInfo(id));
+  });
+
+  document.querySelectorAll('.pin').forEach(pin => {
+    pin.addEventListener('click', () => showInfo(pin.dataset.area));
+  });
+
+  let zoom = 1;
+  let translateX = 0, translateY = 0;
+  const zoomIn = document.getElementById('zoomIn');
+  const zoomOut = document.getElementById('zoomOut');
+
+  zoomIn.addEventListener('click', () => {
+    zoom = Math.min(3, zoom + 0.2);
+    mapContainer.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoom})`;
+  });
+  zoomOut.addEventListener('click', () => {
+    zoom = Math.max(1, zoom - 0.2);
+    if (zoom === 1) {
+      translateX = 0;
+      translateY = 0;
+    }
+    mapContainer.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoom})`;
+  });
+
+
+  let isDragging = false;
+  let startX, startY;
+
+  mapContainer.addEventListener('mousedown', (e) => {
+    if (zoom <= 1) return;
+    isDragging = true;
+    startX = e.clientX - translateX;
+    startY = e.clientY - translateY;
+    mapContainer.classList.add('dragging');
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    mapContainer.classList.remove('dragging');
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    translateX = e.clientX - startX;
+    translateY = e.clientY - startY;
+    mapContainer.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoom})`;
+  });
+
+
+  mapContainer.addEventListener('touchstart', (e) => {
+    if (zoom <= 1) return;
+    isDragging = true;
+    const touch = e.touches[0];
+    startX = touch.clientX - translateX;
+    startY = touch.clientY - translateY;
+    mapContainer.classList.add('dragging');
+  });
+
+  mapContainer.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const touch = e.touches[0];
+    translateX = touch.clientX - startX;
+    translateY = touch.clientY - startY;
+    mapContainer.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoom})`;
+  });
+
+  mapContainer.addEventListener('touchend', () => {
+    isDragging = false;
+    mapContainer.classList.remove('dragging');
+  });
+
+
+  document.addEventListener('click', (e) => {
+    if (!infoBox.contains(e.target) &&
+        !e.target.closest('polygon') &&
+        !e.target.classList.contains('pin')) {
+      infoBox.classList.remove('active');
+    }
+  });
+});
+
 
