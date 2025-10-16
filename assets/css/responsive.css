@@ -308,7 +308,7 @@
     font-size: 24px;
     padding: 28px 20px;
   }
-
+  
   .fast-quote-hero .card .body {
     padding: 28px 24px;
   }
@@ -334,7 +334,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 600px) {
   .fast-quote-hero {
     padding: 0 16px;
@@ -343,7 +342,14 @@
   .fast-quote-hero .card .title {
     font-size: 20px;
     padding: 20px;
+    justify-content:start;
   }
+
+.fast-quote-hero .card .title img{
+    width:100px;
+    height:100px;
+  }
+
   .fast-quote-hero .card .body {
     padding: 20px;
   }
@@ -361,7 +367,6 @@
   }
 }
 
-/*  Responsive Design Instagram*/
 @media (max-width:768px){
     #instagram{
         width:100%;
@@ -407,7 +412,6 @@
 
 /* ====== Responive PortPro ==== Responsive Adjustments ===== */
 
-/* Large tablets and below */
 @media (max-width: 1200px) {
   .cardport-pro {
     width: 100%;
@@ -433,7 +437,6 @@
   }
 }
 
-/* Tablets and small laptops */
 @media (max-width: 900px) {
   .cardport-pro {
     width: 100%;
@@ -615,7 +618,6 @@
   }
 }
 
-/* Responsive - Mobile */
 @media (max-width: 480px) {
   #coverage {
     padding: 32px 0;
@@ -644,7 +646,6 @@
 }
 /* ===== Responsive Adjustments for Coverage Section ===== */
 
-/* Large tablets and smaller (<=1200px) */
 @media (max-width: 1200px) {
   #coverage {
     width: 100%;
@@ -672,7 +673,6 @@
   }
 }
 
-/* Tablets and small laptops (<=900px) */
 @media (max-width: 900px) {
   #coverage {
     padding: 40px 30px;
@@ -697,7 +697,6 @@
   }
 }
 
-/* Mobile screens (<=600px) */
 @media (max-width: 600px) {
   #coverage {
     width: 100%;
@@ -778,7 +777,6 @@
 
 /* ===== Responsive Adjustments for Parking Section ===== */
 
-/* Large tablets and smaller (<=1200px) */
 @media (max-width: 1200px) {
   #parking {
     width: 100%;
@@ -811,7 +809,7 @@
     justify-content: center;
   }
 }
-/* Tablets and small laptops (<=900px) */
+
 @media (max-width: 900px) {
   #parking {
     padding: 40px 0;
@@ -854,7 +852,6 @@
   }
 }
 
-/* Mobile screens (<=600px) */
 @media (max-width: 600px) {
   #parking {
     width: 100%;
