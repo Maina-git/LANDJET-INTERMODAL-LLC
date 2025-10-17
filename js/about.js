@@ -2,6 +2,10 @@ const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navlinks = document.querySelector('.header .container.nav  .navlinks');
 const cta = document.querySelector(".header .container.nav .cta");
 
+
+
+
+
 if(mobileMenuToggle){
   mobileMenuToggle.addEventListener("click", ()=>{
     navlinks.classList.toggle("active");
@@ -132,22 +136,8 @@ canvas.height = Math.floor(window.innerHeight * DPR);
 })();
 
 
+/* 🌍 Interactive Map */
 document.addEventListener('DOMContentLoaded', () => {
-  const areas = {
-    "los-angeles": {
-      title: "Los Angeles Area",
-      text: "We cover the entire Los Angeles metropolitan area, including Santa Monica and Long Beach."
-    },
-    "san-diego": {
-      title: "San Diego Area",
-      text: "Our San Diego office serves the coastal and inland regions with fast delivery options."
-    },
-    "palm-springs": {
-      title: "Palm Springs Area",
-      text: "Our Palm Springs coverage includes the desert cities and surrounding communities."
-    }
-  };
-
   const infoBox = document.getElementById('infoBox');
   const infoTitle = document.getElementById('infoTitle');
   const infoText = document.getElementById('infoText');
@@ -156,59 +146,101 @@ document.addEventListener('DOMContentLoaded', () => {
   const panelText = document.getElementById('panelText');
   const closePanelBtn = document.getElementById('closePanelBtn');
   const mapContainer = document.getElementById('mapContainer');
+  const zoomIn = document.getElementById('zoomIn');
+  const zoomOut = document.getElementById('zoomOut');
 
+  // --- REGION AREAS ---
+  const areas = {
+    "los-angeles": { title: "Los Angeles Area", text: "Covers the LA Metro region, Santa Monica, and Long Beach." },
+    "san-diego": { title: "San Diego", text: "Includes coastal and inland San Diego regions." },
+    "palm-springs": { title: "Palm Springs", text: "Covers desert and surrounding communities." }
+  };
+
+  // --- INDIVIDUAL LOCATIONS ---
+  const locations = {
+    "lancaster": { title: "Lancaster", text: "A fast-growing city in northern Los Angeles County." },
+    "santa-clarita": { title: "Santa Clarita", text: "Known for Six Flags Magic Mountain and its scenic valleys." },
+    "thousand-oaks": { title: "Thousand Oaks", text: "Beautiful suburban area northwest of LA." },
+    "pasadena": { title: "Pasadena", text: "Home to the Rose Parade and California Institute of Technology." },
+    "san-bernardino": { title: "San Bernardino", text: "Major city in the Inland Empire region of Southern California." },
+    "palm-springs": { title: "Palm Springs", text: "Desert resort city known for hot springs and golf courses." },
+    "murrieta": { title: "Murrieta", text: "Rapidly growing community in southwestern Riverside County." },
+    "huntington-beach": { title: "Huntington Beach", text: "Coastal city famous for surf culture and beaches." },
+    "san-diego": { title: "San Diego", text: "Vibrant coastal city known for beaches and the San Diego Zoo." },
+    "tijuana": { title: "Tijuana", text: "Bustling Mexican border city near San Diego." }
+  };
+
+  // --- DISPLAY INFO FOR REGIONS ---
   function showInfo(id) {
     const data = areas[id];
     if (!data) return;
 
     infoTitle.textContent = data.title;
     infoText.textContent = data.text;
+    panelText.textContent = data.text;
+
     infoBox.classList.add('active');
     sidePanel.classList.add('active');
-    panelText.textContent = data.text;
   }
 
-  closeBtn.addEventListener('click', () => {
-    infoBox.classList.remove('active');
-  });
+  // --- DISPLAY INFO FOR LOCATIONS (pins) ---
+  function showLocation(id) {
+    const data = locations[id];
+    if (!data) return;
 
+    infoTitle.textContent = data.title;
+    infoText.textContent = data.text;
+    panelText.textContent = data.text;
 
-  closePanelBtn.addEventListener('click', () => {
-    sidePanel.classList.remove('active');
-  });
+    infoBox.classList.add('active');
+    sidePanel.classList.add('active');
+  }
 
+  // --- CLOSE BUTTONS ---
+  closeBtn.addEventListener('click', () => infoBox.classList.remove('active'));
+  closePanelBtn.addEventListener('click', () => sidePanel.classList.remove('active'));
 
+  // --- CLICKABLE REGIONS ---
   Object.keys(areas).forEach(id => {
     const el = document.getElementById(id);
-    el.addEventListener('click', () => showInfo(id));
+    if (el) {
+      el.addEventListener('click', () => showInfo(id));
+    } else {
+      console.warn(`⚠️ Missing polygon element for ID: ${id}`);
+    }
   });
 
+  // --- CLICKABLE PINS ---
   document.querySelectorAll('.pin').forEach(pin => {
-    pin.addEventListener('click', () => showInfo(pin.dataset.area));
+    const id = pin.dataset.area;
+    pin.addEventListener('click', () => showLocation(id));
   });
 
+  // --- ZOOM & PAN FUNCTIONALITY ---
   let zoom = 1;
   let translateX = 0, translateY = 0;
-  const zoomIn = document.getElementById('zoomIn');
-  const zoomOut = document.getElementById('zoomOut');
+  let isDragging = false;
+  let startX, startY;
+
+  function updateTransform() {
+    mapContainer.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoom})`;
+  }
 
   zoomIn.addEventListener('click', () => {
     zoom = Math.min(3, zoom + 0.2);
-    mapContainer.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoom})`;
+    updateTransform();
   });
+
   zoomOut.addEventListener('click', () => {
     zoom = Math.max(1, zoom - 0.2);
     if (zoom === 1) {
       translateX = 0;
       translateY = 0;
     }
-    mapContainer.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoom})`;
+    updateTransform();
   });
 
-
-  let isDragging = false;
-  let startX, startY;
-
+  // --- DRAG TO MOVE MAP ---
   mapContainer.addEventListener('mousedown', (e) => {
     if (zoom <= 1) return;
     isDragging = true;
@@ -226,10 +258,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isDragging) return;
     translateX = e.clientX - startX;
     translateY = e.clientY - startY;
-    mapContainer.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoom})`;
+    updateTransform();
   });
 
-
+  // --- TOUCH SUPPORT ---
   mapContainer.addEventListener('touchstart', (e) => {
     if (zoom <= 1) return;
     isDragging = true;
@@ -244,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const touch = e.touches[0];
     translateX = touch.clientX - startX;
     translateY = touch.clientY - startY;
-    mapContainer.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoom})`;
+    updateTransform();
   });
 
   mapContainer.addEventListener('touchend', () => {
@@ -252,14 +284,29 @@ document.addEventListener('DOMContentLoaded', () => {
     mapContainer.classList.remove('dragging');
   });
 
-
+  // --- CLOSE INFO WHEN CLICKING OUTSIDE ---
   document.addEventListener('click', (e) => {
-    if (!infoBox.contains(e.target) &&
-        !e.target.closest('polygon') &&
-        !e.target.classList.contains('pin')) {
+    if (
+      !infoBox.contains(e.target) &&
+      !e.target.closest('polygon') &&
+      !e.target.classList.contains('pin')
+    ) {
       infoBox.classList.remove('active');
     }
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

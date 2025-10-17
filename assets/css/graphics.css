@@ -57,23 +57,18 @@
   0%, 100% { transform: translate(-50%, -100%) translateY(0); }
   50% { transform: translate(-50%, -100%) translateY(-5px); }
 }
-.map-label {
-  position: absolute;
-  bottom: 15px;
-  left: 20px;
-  background: rgba(255, 215, 0, 0.9);
-  color: #222;
-  padding: 6px 14px;
-  border-radius: 6px;
-  font-weight: bold;
-}
+
 .info-box {
   position: absolute;
   top: 50%;
+  top:50%;
+  left:0;
   left: 50%;
   width: 80%;
   max-width: 400px;
-  background: white;
+  background: #1e3a8a;
+  color:white;
+  font-family:"Poppins", sans-serif;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
@@ -95,6 +90,7 @@
   font-weight: bold;
   cursor: pointer;
   margin-top: 10px;
+  font-family:"Poppins", sans-serif;
 }
 #closeBtn:hover {
   background: #f1c40f;
@@ -105,10 +101,12 @@
   top: 0;
   height: 100%;
   width: 300px;
-  background: #fff;
+  background:#1e3a8a;
   box-shadow: -4px 0 10px rgba(0,0,0,0.1);
   transition: right 0.3s ease;
   padding: 20px;
+  font-family:"Poppins", sans-serif;
+  color:white;
   z-index: 20;
 }
 .side-panel.active {
@@ -131,12 +129,10 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #666;
+  color:white;
   line-height: 1;
   transition: color 0.2s ease;
 }
-.close-panel:hover { color: #000; }
-
 .zoom-controls {
   position: absolute;
   top: 10px;
@@ -157,16 +153,21 @@
 .zoom-controls button:hover {
   background: #0ea5e9;
 }
-
 .map-legend {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(255,255,255,0.9);
-  padding: 10px;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  font-size: 0.9rem;
+ position: absolute;
+ bottom: 10px;
+ left: 10px;
+ background:#1e3a8a; 
+ padding: 10px;
+ color:white;
+ display:flex;
+ gap:10px;
+ justify-content: start;
+ align-items:left;
+ box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+ font-size: 0.9rem;
+ font-family:"Poppins", sans-serif;
+ z-index:100;
 }
 .color-box {
   display: inline-block;
