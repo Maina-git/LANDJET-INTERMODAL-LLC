@@ -149,31 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const zoomIn = document.getElementById('zoomIn');
   const zoomOut = document.getElementById('zoomOut');
 
-  // --- REGION AREAS ---
-  /*
-  const areas = {
-    "los-angeles": { title: "Los Angeles Area", text: "Covers the LA Metro region, Santa Monica, and Long Beach." },
-    "san-diego": { title: "San Diego", text: "Includes coastal and inland San Diego regions." },
-    "palm-springs": { title: "Palm Springs", text: "Covers desert and surrounding communities." }
-  };
 
-  // --- INDIVIDUAL LOCATIONS ---
-  const locations = {
-    "lancaster": { title: "Lancaster", text: "A fast-growing city in northern Los Angeles County." },
-    "santa-clarita": { title: "Santa Clarita", text: "Known for Six Flags Magic Mountain and its scenic valleys." },
-    "thousand-oaks": { title: "Thousand Oaks", text: "Beautiful suburban area northwest of LA." },
-    "pasadena": { title: "Pasadena", text: "Home to the Rose Parade and California Institute of Technology." },
-    "san-bernardino": { title: "San Bernardino", text: "Major city in the Inland Empire region of Southern California." },
-    "palm-springs": { title: "Palm Springs", text: "Desert resort city known for hot springs and golf courses." },
-    "murrieta": { title: "Murrieta", text: "Rapidly growing community in southwestern Riverside County." },
-    "huntington-beach": { title: "Huntington Beach", text: "Coastal city famous for surf culture and beaches." },
-    "san-diego": { title: "San Diego", text: "Vibrant coastal city known for beaches and the San Diego Zoo." },
-    "tijuana": { title: "Tijuana", text: "Bustling Mexican border city near San Diego." }
-  };
-
-  */
-
-// --- REGION AREAS (Coverage Zones) ---
 const areas = {
   "los-angeles": {
     title: "Los Angeles / Long Beach Ports",
@@ -189,7 +165,6 @@ const areas = {
   }
 };
 
-// --- LOCATION PINS (Key Hubs & Highlights) ---
 const locations = {
   "lancaster": {
     title: "Lancaster Yard",
@@ -233,7 +208,6 @@ const locations = {
   }
 };
 
-  // --- DISPLAY INFO FOR REGIONS ---
   function showInfo(id) {
     const data = areas[id];
     if (!data) return;
@@ -246,7 +220,6 @@ const locations = {
     sidePanel.classList.add('active');
   }
 
-  // --- DISPLAY INFO FOR LOCATIONS (pins) ---
   function showLocation(id) {
     const data = locations[id];
     if (!data) return;
@@ -269,17 +242,16 @@ const locations = {
     if (el) {
       el.addEventListener('click', () => showInfo(id));
     } else {
-      console.warn(`⚠️ Missing polygon element for ID: ${id}`);
+      console.warn(`Missing polygon element for ID: ${id}`);
     }
   });
 
-  // --- CLICKABLE PINS ---
   document.querySelectorAll('.pin').forEach(pin => {
     const id = pin.dataset.area;
     pin.addEventListener('click', () => showLocation(id));
   });
 
-  // --- ZOOM & PAN FUNCTIONALITY ---
+  
   let zoom = 1;
   let translateX = 0, translateY = 0;
   let isDragging = false;
@@ -303,7 +275,7 @@ const locations = {
     updateTransform();
   });
 
-  // --- DRAG TO MOVE MAP ---
+
   mapContainer.addEventListener('mousedown', (e) => {
     if (zoom <= 1) return;
     isDragging = true;
@@ -324,7 +296,7 @@ const locations = {
     updateTransform();
   });
 
-  // --- TOUCH SUPPORT ---
+
   mapContainer.addEventListener('touchstart', (e) => {
     if (zoom <= 1) return;
     isDragging = true;
@@ -347,7 +319,6 @@ const locations = {
     mapContainer.classList.remove('dragging');
   });
 
-  // --- CLOSE INFO WHEN CLICKING OUTSIDE ---
   document.addEventListener('click', (e) => {
     if (
       !infoBox.contains(e.target) &&

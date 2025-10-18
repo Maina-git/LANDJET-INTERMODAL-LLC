@@ -528,24 +528,29 @@ color:#ffffff;
     transform: scaleY(1.5);
 }
 
-/* ===== FAST QUOTE SECTION ===== */
+/* ===============================
+   FAST QUOTE HERO SECTION
+=================================*/
 .fast-quote-hero {
   width: 100%;
   max-width: 1400px;
-  margin:0 auto;
+  margin: 0 auto;
   padding: 0 40px;
   display: flex;
   justify-content: center;
-  background:rgba(241, 245, 249, 0.6);
+  background: rgba(241, 245, 249, 0.6);
 }
+
 .fast-quote-hero .card {
   width: 100%;
-  padding:50px 0;
+  padding: 50px 0;
   max-width: 1200px;
   display: grid;
   grid-template-columns: 1fr 1.5fr; /* Title left, form right */
   overflow: hidden;
 }
+
+/* ===== TITLE SIDE ===== */
 .fast-quote-hero .card .title {
   background: #1e3a8a;
   color: white;
@@ -558,11 +563,14 @@ color:#ffffff;
   padding: 40px 30px;
   text-align: center;
 }
-.fast-quote-hero .card .title img{
-  border-radius:100%;
-  width:200px;
-  height:200px;
+
+.fast-quote-hero .card .title img {
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
 }
+
+/* ===== FORM SIDE ===== */
 .fast-quote-hero .card .body {
   background: white;
   padding: 40px 50px;
@@ -570,29 +578,36 @@ color:#ffffff;
   flex-direction: column;
   justify-content: center;
 }
+
 .fast-quote-hero form {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
+
 .fast-quote-hero .row {
   display: grid;
   gap: 16px;
 }
+
 .fast-quote-hero .row.cols-2 {
   grid-template-columns: 1fr 1fr;
 }
+
+/* ===== FORM FIELDS ===== */
 .fast-quote-hero input,
 .fast-quote-hero select,
 .fast-quote-hero textarea {
   width: 100%;
   padding: 12px 14px;
   font-size: 15px;
-  border:none;
+  border: none;
   border-bottom: 1px solid #cbd5e1;
   font-family: "Poppins", sans-serif;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fff;
 }
+
 .fast-quote-hero input:focus,
 .fast-quote-hero select:focus,
 .fast-quote-hero textarea:focus {
@@ -600,10 +615,17 @@ color:#ffffff;
   outline: none;
   box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.15);
 }
+
 .fast-quote-hero textarea {
   resize: vertical;
   min-height: 100px;
 }
+
+.fast-quote-hero ::placeholder {
+  color: #94a3b8;
+}
+
+/* ===== BUTTON ===== */
 .fast-quote-hero .btn {
   background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
   color: white;
@@ -624,8 +646,48 @@ color:#ffffff;
   box-shadow: 0 6px 16px rgba(14, 165, 233, 0.4);
   background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
 }
-.fast-quote-hero ::placeholder {
-  color: #94a3b8;
+
+.fast-quote-hero .datalist-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.fast-quote-hero .datalist-wrapper input[list] {
+  width: 100%;
+  padding: 12px 38px 12px 14px; /* space for arrow */
+  font-size: 15px;
+  border: none;
+  border-bottom: 1px solid #cbd5e1;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  appearance: none;
+}
+
+.fast-quote-hero .datalist-wrapper input[list]:focus {
+  border-color: #0ea5e9;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.15);
+}
+
+.fast-quote-hero .datalist-wrapper::after {
+  content: "▾";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+  font-size: 30px;
+  pointer-events: none;
+}
+
+.fast-quote-hero input[list]::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+
+.fast-quote-hero .datalist-wrapper input[list]:hover {
+  cursor: text;
+  border-color: #94a3b8;
 }
 
 /* ===========start of instagram ==========*/
