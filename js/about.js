@@ -150,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const zoomOut = document.getElementById('zoomOut');
 
   // --- REGION AREAS ---
+  /*
   const areas = {
     "los-angeles": { title: "Los Angeles Area", text: "Covers the LA Metro region, Santa Monica, and Long Beach." },
     "san-diego": { title: "San Diego", text: "Includes coastal and inland San Diego regions." },
@@ -169,6 +170,68 @@ document.addEventListener('DOMContentLoaded', () => {
     "san-diego": { title: "San Diego", text: "Vibrant coastal city known for beaches and the San Diego Zoo." },
     "tijuana": { title: "Tijuana", text: "Bustling Mexican border city near San Diego." }
   };
+
+  */
+
+// --- REGION AREAS (Coverage Zones) ---
+const areas = {
+  "los-angeles": {
+    title: "Los Angeles / Long Beach Ports",
+    text: "Primary operation zone for Landjet Intermodal LLC. We handle port drayage, reefer transport, and container movements from the Ports of Los Angeles and Long Beach."
+  },
+  "san-diego": {
+    title: "Southern California Operations",
+    text: "Supporting import/export runs and regional deliveries through San Diego County and southern routes toward Tijuana."
+  },
+  "palm-springs": {
+    title: "Inland Empire Region",
+    text: "Extended coverage zone for yard storage, intermodal connections, and chassis repositioning across Riverside and San Bernardino counties."
+  }
+};
+
+// --- LOCATION PINS (Key Hubs & Highlights) ---
+const locations = {
+  "lancaster": {
+    title: "Lancaster Yard",
+    text: "Strategic northern yard used for staging equipment and supporting operations reaching the High Desert region."
+  },
+  "santa-clarita": {
+    title: "Santa Clarita Dispatch Point",
+    text: "Satellite dispatch center supporting northern Los Angeles operations and container tracking."
+  },
+  "thousand-oaks": {
+    title: "Thousand Oaks Client Zone",
+    text: "Customer region for dedicated drayage and reefer clients west of Los Angeles."
+  },
+  "pasadena": {
+    title: "Pasadena Route Corridor",
+    text: "Typical through-route for drayage runs connecting the port to Inland Empire destinations."
+  },
+  "san-bernardino": {
+    title: "San Bernardino Logistics Hub",
+    text: "Major Inland Empire facility handling transload, storage, and linehaul distribution."
+  },
+  "murrieta": {
+    title: "Murrieta Operations",
+    text: "Southwestern Riverside County zone used for reefer and container transfer operations."
+  },
+  "huntington-beach": {
+    title: "Huntington Beach Coastal Route",
+    text: "Part of the coastal service area supporting reefer and container deliveries along the 405 corridor."
+  },
+  "san-diego": {
+    title: "San Diego Gateway",
+    text: "Supports southbound routes and cross-border logistics with Mexico; reefer and chassis repositioning point."
+  },
+  "tijuana": {
+    title: "Tijuana Connection Point",
+    text: "Cross-border connection area where containers are exchanged and processed for export."
+  },
+  "palm-springs": {
+    title: "Palm Springs Yard",
+    text: "Desert-side facility used for equipment staging and inland route coverage."
+  }
+};
 
   // --- DISPLAY INFO FOR REGIONS ---
   function showInfo(id) {

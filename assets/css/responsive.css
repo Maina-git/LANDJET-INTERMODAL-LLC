@@ -1023,6 +1023,7 @@
 @media (max-width:768px){
     .map{
         margin:50px auto;
+        width:100%;
         padding:0 24px;
     }
     .map h2{
@@ -1074,7 +1075,9 @@
         display:inline;
     }
 }
-/* Respomsive Footer */
+
+
+/* Respomsive Footer */ 
 @media (max-width:768px){
     .footer{
         padding:0 24px;
