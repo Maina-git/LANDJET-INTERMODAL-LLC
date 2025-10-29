@@ -46,6 +46,10 @@ setTimeout(()=>{
 }, 2000);
 }
 
+function prevSlide(){
+  current = (current - 1 + backgroundImages.length) % backgroundImages.length;
+  setSlide(current, 'left');
+}
 function nextSlide(){
   current = (current + 1) % backgroundImages.length;
   setSlide(current, 'right');
