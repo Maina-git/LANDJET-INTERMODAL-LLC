@@ -5,6 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="icon" type="image/png" href="../assets/logo.png">
 <title>Landjet Intermodal LLC – Port Drayage in Southern California</title>
 <!-- fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -178,8 +179,6 @@ body > * {
 </div>
 </div>
 </header>
-
-
 <!-- === Easter egg modal markup (added) === -->
 <div id="eggOverlay" class="egg-overlay" role="dialog" aria-modal="true" aria-labelledby="eggTitle" aria-hidden="true">
 <div class="egg-modal ticket">
@@ -207,10 +206,8 @@ body > * {
 </div>
 <!-- Confetti layer -->
 <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
-
   <main>
     <div class="page">
-   
     <h1>About Landjet Intermodal</h1>
     <p>
 <b>Landjet Intermodal LLC</b> is a Southern California–based trucking company proudly serving the Ports of Los Angeles and Long Beach.<br>
@@ -228,39 +225,54 @@ At Landjet Intermodal, our leadership team brings together real-world experience
 
 Whether you need import/export container drayage, yard storage, or regional trucking solutions, Landjet Intermodal LLC is your trusted logistics partner in Southern California—driven by experience, powered by reliability.      </p>  
     </div>
+
    <!-- Map section  Our accessiblity -->
 <div class="map">
+  <h1 class="map-title">Landjet Intermodal LLC Southern california</h1>
 <div class="map-wrapper">
-    <!-- Zoom Controls -->
-    <div class="zoom-controls">
+  <!-- Zoom Controls -->
+  <div class="zoom-controls">
       <button id="zoomIn">+</button>
       <button id="zoomOut">−</button>
     </div>
- <div class="map-legend">
+<div class="map-legend">
   <h1 class="map-legend-key">Key</h1>
-        <div class="map-legend-container"><span class="color-box gold"></span> <p>Los Angeles Area</p></div>
-        <div class="map-legend-container"><span class="color-box green"></span> <p>Palm Springs Area </p></div>
-        <div class="map-legend-container"><span class="color-box blue"></span> <p> San Diego Area </p></div>
-      </div>
+  <div class="map-legend-container">
+    <i class="fas fa-city"></i>
+    <span class="color-box gold"></span>
+    <p>Los Angeles Area</p>
+  </div>
+  <div class="map-legend-container">
+    <i class="fas fa-sun"></i>
+    <span class="color-box green"></span>
+    <p>Palm Springs Area</p>
+  </div>
+  <div class="map-legend-container">
+    <i class="fas fa-water"></i>
+    <span class="color-box blue"></span>
+    <p>San Diego Area</p>
+  </div>
+</div>
  <div class="side-panel" id="sidePanel">
         <div class="panel-header">
-          <h3>Region Details</h3>
+          <h2>Region Details</h2>
           <button id="closePanelBtn" class="close-panel">×</button>
         </div>
+        <h3 id="panelTitle"></h3>
         <p id="panelText">Click a region or pin to learn more.</p>
       </div>
-
+    
  <!-- Popup Info Box -->
-      <div class="info-box" id="infoBox">
+    
+ <div class="info-box" id="infoBox">
         <h3 id="infoTitle"></h3>
         <p id="infoText"></p>
         <button id="closeBtn">Close</button>
       </div>
-
+    
     <!-- Map -->
     <div class="map-container" id="mapContainer">
       <img src="../assets/map-base.png" alt="Service Area Map" class="map-image" />
-
       <!-- SVG Overlay -->  
       <svg class="map-overlay" viewBox="0 0 1200 800">
        <polygon id="los-angeles" 
@@ -269,7 +281,7 @@ Whether you need import/export container drayage, yard storage, or regional truc
           stroke="#FFD700"
           stroke-width="3"
           stroke-linejoin="round"
-          style="cursor:pointer" />
+          style="cursor:pointer"/>
         <polygon id="san-diego" 
           points="400,700 650,500 800,700 600,750"
           fill="rgba(0,150,255,0.3)"
@@ -283,22 +295,44 @@ Whether you need import/export container drayage, yard storage, or regional truc
           stroke="#00C781"
           stroke-width="3"
           stroke-linejoin="round"
-          style="cursor:pointer" />
+          style="cursor:pointer"/>
       </svg>
-  <!-- Animated Pins (Clickable Locations) -->
-        <div class="pin" data-area="pasadena" style="top:33%; left:30%;"></div>
-        <div class="pin" data-area="thousand-oaks" style="top:32%; left:20%;"></div>
-        <div class="pin" data-area="thousand-oaks" style="top:51%; left:31%;"></div>
-        <div class="pin" data-area="lancaster" style="top:13%; left:30%;"></div>
-        <div class="pin" data-area="san-bernardino" style="top:35%; left:40%;"></div>
-        <div class="pin" data-area="santa-clarita" style="top:25%; left:20%;"></div>
-        <div class="pin" data-area="san-diego" style="top:85%; left:45%;"></div>
-        <div class="pin" data-area="huntington-beach" style="top:55%; left:45%;"></div>
-        <div class="pin" data-area="palm-springs" style="top:45%; left:54%;"></div>
-        <div class="pin" data-area="tijuana" style="top:90%; left:50%;"></div>
-    </div>
-  </div>
+      <!-- Animated Pins (Clickable Locations) -->
+      <div class="pin" data-area="pasadena" style="top:33%; left:30%;">
+        <i class="fas fa-industry"></i>
       </div>
+        <div class="pin" data-area="thousand-oaks" style="top:32%; left:20%;">
+          <i class="fas fa-warehouse"></i>
+        </div>
+        <div class="pin" data-area="thousand-oaks" style="top:51%; left:31%;">
+          <i class="fas fa-truck"></i>
+        </div>
+        <div class="pin" data-area="lancaster" style="top:13%; left:30%;">
+          <i class="fas fa-truck-fast"></i>
+        </div>
+        <div class="pin" data-area="san-bernardino" style="top:35%; left:40%;">
+         <i class="fas fa-boxes-stacked"></i>
+        </div>
+        <div class="pin" data-area="santa-clarita" style="top:25%; left:20%;">
+          <i class="fas fa-route"></i>
+        </div>
+        <div class="pin" data-area="san-diego" style="top:85%; left:45%;">
+          <i class="fas fa-ship"></i>
+        </div>
+        <div class="pin" data-area="huntington-beach" style="top:55%; left:45%;">
+         <i class="fas fa-water"></i>
+        </div>
+        <div class="pin" data-area="palm-springs" style="top:45%; left:54%;">
+          <i class="fas fa-sun"></i>
+        </div>
+        <div class="pin" data-area="tijuana" style="top:90%; left:50%;">
+          <i class="fas fa-border-all"></i>
+        </div>
+      </div>
+</div>
+</div>
+
+
     <div class="get-in-touch">
     <div class="container">
       <h2>Get in Touch</h2>

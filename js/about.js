@@ -3,9 +3,6 @@ const navlinks = document.querySelector('.header .container.nav  .navlinks');
 const cta = document.querySelector(".header .container.nav .cta");
 
 
-
-
-
 if(mobileMenuToggle){
   mobileMenuToggle.addEventListener("click", ()=>{
     navlinks.classList.toggle("active");
@@ -137,12 +134,29 @@ canvas.height = Math.floor(window.innerHeight * DPR);
 
 
 /* 🌍 Interactive Map */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const infoBox = document.getElementById('infoBox');
   const infoTitle = document.getElementById('infoTitle');
   const infoText = document.getElementById('infoText');
   const closeBtn = document.getElementById('closeBtn');
   const sidePanel = document.getElementById('sidePanel');
+  const panelTitle = document.getElementById("panelTitle");
   const panelText = document.getElementById('panelText');
   const closePanelBtn = document.getElementById('closePanelBtn');
   const mapContainer = document.getElementById('mapContainer');
@@ -214,6 +228,7 @@ const locations = {
 
     infoTitle.textContent = data.title;
     infoText.textContent = data.text;
+    panelTitle.textContent = data.title
     panelText.textContent = data.text;
 
     infoBox.classList.add('active');
@@ -226,6 +241,7 @@ const locations = {
 
     infoTitle.textContent = data.title;
     infoText.textContent = data.text;
+    panelTitle.textContent = data.title
     panelText.textContent = data.text;
 
     infoBox.classList.add('active');
@@ -250,7 +266,6 @@ const locations = {
     const id = pin.dataset.area;
     pin.addEventListener('click', () => showLocation(id));
   });
-
   
   let zoom = 1;
   let translateX = 0, translateY = 0;
