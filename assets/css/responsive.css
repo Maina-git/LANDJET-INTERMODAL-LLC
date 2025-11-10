@@ -599,125 +599,159 @@
     }
 }
 
-/* Responsive - Tablets */
-@media (max-width: 768px) {
+/* coverage section */
+
+@media (max-width:768px){
+  #covreage{
+    padding:40px 0;
+  }
+  #covreage .container{
+    padding:0 24px;
+  }
+  #coverage h2{
+    font-size:24px;
+    text-align:center;
+  }
+  #coverage > .container > p{
+    font-size:15px;
+    text-align:center;
+    line-height:1.6;
+  }
+#coverage > .grid.lanes{
+grid-template-columns: 1fr;
+gap:16px;
+margin-top:20px;
+}
+#coverage .card{
+  border-radius:10px;
+}
+#covreage .card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+#coverage .card .body{
+  padding:18px;
+  font-size:14px;
+}
+}
+
+@media (max-width:480px){
   #coverage {
-    padding: 40px 0;
+    padding:32px 0;
   }
-  #coverage .container {
-    padding: 0 24px;
+  #coverage .container{
+    padding:0 16px;
   }
-  #coverage h2 {
-    font-size: 24px !important;
+  #coverage h2{
+    font-size:22px;
+    text-align:center;
   }
-  #coverage > .container > p {
-    font-size: 15px;
+  #coverage > .container > p{
+    font-size:14px;
+    text-align:center;
   }
-  #coverage .grid.lanes {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-top: 20px !important;
+  #covreage .grid.lanes{
+    gap:12px;
+    margin-top:16px;
   }
-  #coverage .card .body {
-    padding: 18px;
-    font-size: 14px;
+#coverage .card{
+  border-radius:10px;
+}
+#coverage .card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+  }
+#coverage .card.body{
+  padding:16px;
+  font-size:14px;
+}
+}
+@media (max-width:1200px){
+  #covreage {
+    width:100%;
+    padding:50px 40px;
+  }
+  #coverage .container{
+    max-width:95%;
+    padding:0 20px;
+  }
+  #coverage .grid.lanes{
+    grid-template-columns:repeat(2, 1fr);
+    gap:20px;
+  }
+  #coverage h2{
+    font-size:26px;
+    text-align:center;
+  }
+  #coverage > .container > p{
+    text-align:center;
+    font-size:15px;
+  }
+  #coverage .card img{
+    height:220px;
+    object-fit:cover;
   }
 }
 
-@media (max-width: 480px) {
-  #coverage {
-    padding: 32px 0;
+@media (max-width:900px){
+  #coverage{
+    padding:40px 30px;
   }
-  #coverage .container {
-    padding: 0 16px;
-  }
-  #coverage h2 {
-    font-size: 22px !important;
-  }
-  #coverage > .container > p {
-    font-size: 14px;
-  }
-  #coverage .grid.lanes {
-    gap: 10px;
-    margin-top: 16px !important;
-  }
-  #coverage .card .body {
-    padding: 16px;
-  }
-}
-/* ===== Responsive Adjustments for Coverage Section ===== */
-
-@media (max-width: 1200px) {
-  #coverage {
-    width: 100%;
-    padding: 50px 40px;
-  }
-  #coverage .container {
-    max-width: 95%;
-    padding: 0 20px;
-  }
-  #coverage .grid.lanes {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  #coverage h2 {
-    font-size: 26px;
-    text-align: center;
-  }
-  #coverage > .container > p {
-    text-align: center;
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 900px) {
-  #coverage {
-    padding: 40px 30px;
-  }
-  #coverage .grid.lanes {
+  #coverage .grid.lanes{
     grid-template-columns: 1fr 1fr;
+    gap:16px;
   }
-  #coverage h2 {
-    font-size: 24px;
+  #coverage h2{
+    font-size:24px;
+    text-align:center;
   }
-  #coverage > .container > p {
-    font-size: 15px;
-    line-height: 1.6;
+  #coverage > .container > p{
+    font-size:15px;
+    line-height:1.6;
+    text-align:center;
   }
-  #coverage .card .body {
-    font-size: 14px;
-    padding: 18px;
+  #coverage .card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+  }
+  #coverage .card .body{
+    font-size:14px;
+    padding:18px;
   }
 }
 
-@media (max-width: 600px) {
-  #coverage {
-    width: 100%;
-    padding: 30px 20px;
+@media (max-width:600px){
+  #coverage{
+    width:100%;
+    padding:30px 20px;
   }
-  #coverage .container {
-    width: 100%;
-    padding: 0;
-  }
-  #coverage h2 {
-    font-size: 22px;
-    text-align: center;
+  #coverage .container{
+    width:100%;
+    padding:0;
   }
   #coverage > .container > p {
-    font-size: 14px;
-    text-align: center;
+    font-size:14px;
+    text-align:center;
   }
-  #coverage .grid.lanes {
+  #coverage .grid.lanes{
     grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 20px;
+    gap:16px;
+    margin-top:20px;
   }
-  #coverage .card {
-    border-radius: 10px;
+  #coverage .card{
+    border-radius:10px;
   }
-  #coverage .card .body {
-    font-size: 14px;
-    padding: 16px;
+  #covreage .card img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+  }
+  #coverage .card .body{
+    font-size:14px;
+    padding:16px;
   }
 }
 
@@ -829,7 +863,7 @@
     font-size: 14px;
     line-height: 1.8;
   }
-  #parking div[style*="display:flex"] {
+  #parking .btn-container{
     justify-content: center;
   }
   .flip-btn {
@@ -859,6 +893,7 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
   .flip-btn {
     width: 150px;
     height: 46px;
@@ -867,10 +902,16 @@
   .flip-btn-back {
     font-size: 14px;
   }
-  .btn-outline {
+  .parking-hero .btn-outline {
     width: 100%;
     font-size: 14px;
     padding: 10px 14px;
+    outline:none;
+
+  }
+  .parking-hero .btn-outline:hover{
+   transform: translateY(-3px);
+   transition: all 0.3s ease; 
   }
   #parking .card {
     margin: 0 auto;
@@ -944,7 +985,6 @@
         line-height:1.8;
     }
 }
-
 /* Resposive About Page */
 @media (max-width:768px){
     .page{
@@ -994,7 +1034,6 @@
         font-size:0.9rem;
     }
 }
-
 /* Responsive Map page */
 @media (max-width:768px){
     .map{
@@ -1017,7 +1056,6 @@
         margin-bottom:16px;
     }
 }
-
 @media (max-width: 900px) {
   .map-wrapper {
     max-width: 95%;
@@ -1030,7 +1068,6 @@
     max-width: 350px;
   }
 }
-
 /* For mobile devices */
 @media (max-width: 600px) {
   .map-wrapper {
@@ -1068,7 +1105,6 @@
     left: 5px;
   }
 }
-
 /* Responsive Get  in touch page */
 @media (max-width:768px){
     .get-in-touch{
@@ -1103,7 +1139,6 @@
         display:inline;
     }
 }
-
 /* Respomsive Footer */ 
 @media (max-width:768px){
     .footer{

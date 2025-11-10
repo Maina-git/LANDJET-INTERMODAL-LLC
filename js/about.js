@@ -137,19 +137,6 @@ canvas.height = Math.floor(window.innerHeight * DPR);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const infoBox = document.getElementById('infoBox');
   const infoTitle = document.getElementById('infoTitle');
@@ -344,6 +331,33 @@ const locations = {
     }
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

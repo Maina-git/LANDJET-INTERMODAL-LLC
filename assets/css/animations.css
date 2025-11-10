@@ -19,10 +19,7 @@
     100%{ transform:translateX(-100%); opacity: 0;}
 }
     /* --HERO CONTENT --- */
-
 /* Button animations  */
-
-
 @keyframes fadeln{
   from {
     opacity:0;
@@ -33,9 +30,9 @@
     transform:translateY(0);
   }
 }
+/* animations for ticket shimmer*/
 
-
-
+@keyframes ticketShimmer { to { transform: translateY(260%) skewY(-8deg); } }
 
 /* Focus state for Accessibility */
 .btn:focus,
